@@ -1,0 +1,31 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+*.local
+.local/
+
+# GDevelop local autosaves and generated preview projects
+game.json.autosave
+game.json.autosave.*
+game.before-*.json
+game.v*.json
+game.*-preview.json
+game.*-debug.json
+
+# Generated gameplay evidence and screenshots
+evidence/
+previews/
+gameplay-test-screenshots/
+gameplay-test-results.json
+GDTMP-*/
+
+# Logs and editor/OS files
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+

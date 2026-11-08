@@ -1,0 +1,42 @@
+// Single charge/fire state machine shared by every scene using BASE weapons.
+export function updateWeaponInput(r,weapon,config){
+  r.updateAimTarget(weapon==='Missile'?config.lockRange:config.range,{
+    verticalBias:config.verticalBias,
+    switchMargin:config.switchMargin,
+  });
+  r.fireCooldown=Math.max(0,r.fireCooldown-r.dt);
+  if(r.fireLocked){
+    if(!r.keys.fire)r.fireLocked=false;
+    return;
+  }
+  if(weapon==='Energy'){
+    if(r.keys.fire&&r.fireCooldown<=0){
+      r.fire(false);
+      r.fireCooldown=config.interval;
+    }
+    return;
+  }
+  if(r.keys.fire&&!r.charging&&r.fireCooldown<=0){
+    r.charging=true;
+    r.charge=0;
+  }
+  if(r.charging&&r.keys.fire){
+    r.charge=Math.min(weapon==='Cannon'?config.charge:config.lock,r.charge+r.dt);
+    if(weapon==='Missile'){
+      r.missileTargetId=r.aimTargetId;
+      r.set('MissileTargetId',r.missileTargetId);
+      r.set('MissileLockProgress',r.aimTargetId?Math.min(config.lock,r.charge):0);
+      if(!r.aimTargetId)r.charge=0;
+    }
+  }
+  if(r.charging&&r.released.fire){
+    r.fire(r.charge);
+    r.charge=0;
+    r.charging=false;
+    r.missileTargetId='';
+    r.set('MissileTargetId','');
+    r.set('MissileLockProgress',0);
+    r.fireCooldown=config.interval;
+  }
+  r.set('Charge',r.charge);
+}

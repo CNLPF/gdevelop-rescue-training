@@ -1,0 +1,430 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "file": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "sha256": "395d280029ed72cf973463b0b59e89e2ca586b4f5292a5d2a71cb6a7a25ee680"
+    },
+    {
+      "file": "03_Enemies/ENM_ENEMY_CONCEPT_SHEET_V02.png",
+      "sha256": "975845f4a3e2be6ac8ccb3346ee8fe026a540a5d2f99584ead0dcdc5de9cd1a5"
+    }
+  ],
+  "runtime": {
+    "HeroIDLE": "assets/hd-actors/CHR_PLAYER_IDLE.png",
+    "HeroRUN": "assets/hd-actors/CHR_PLAYER_RUN.png",
+    "HeroJUMP": "assets/hd-actors/CHR_PLAYER_JUMP.png",
+    "HeroDBLJUMP": "assets/hd-actors/CHR_PLAYER_DBLJUMP.png",
+    "HeroSHOOT": "assets/hd-actors/CHR_PLAYER_SHOOT.png",
+    "HeroCHARGE": "assets/hd-actors/CHR_PLAYER_CHARGE.png",
+    "HeroFIRE": "assets/hd-actors/CHR_PLAYER_FIRE.png",
+    "HeroHURT": "assets/hd-actors/CHR_PLAYER_HURT.png",
+    "Patrol": "assets/hd-actors/ENM_PATROL.png",
+    "ScoutRun": "assets/hd-actors/ENM_SCOUTRUN.png",
+    "Turret": "assets/hd-actors/ENM_TURRET.png",
+    "TurretWarn": "assets/hd-actors/ENM_TURRETWARN.png",
+    "GuardIdle": "assets/hd-actors/ENM_GUARDIDLE.png",
+    "GuardBlock": "assets/hd-actors/ENM_GUARDBLOCK.png",
+    "GunEnergy": "assets/hd-actors/WPN_GUNENERGY.png",
+    "HudEnergy": "assets/hd-actors/UI_GUNENERGY.png",
+    "GunCannon": "assets/hd-actors/WPN_GUNCANNON.png",
+    "HudCannon": "assets/hd-actors/UI_GUNCANNON.png",
+    "ProxyPlayer": "assets/hd-actors/EDITOR_PLAYER.png",
+    "ProxyPatrol": "assets/hd-actors/EDITOR_PATROL.png",
+    "ProxyTurret": "assets/hd-actors/EDITOR_TURRET.png",
+    "ProxyShield": "assets/hd-actors/EDITOR_SHIELD.png"
+  },
+  "entries": [
+    {
+      "name": "CHR_PLAYER_IDLE",
+      "file": "assets/hd-actors/CHR_PLAYER_IDLE.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        60,
+        125,
+        250,
+        370
+      ],
+      "foot": [
+        181,
+        481
+      ],
+      "scale": 0.285,
+      "canvas": [
+        176,
+        128
+      ],
+      "anchor": [
+        88,
+        116
+      ]
+    },
+    {
+      "name": "CHR_PLAYER_RUN",
+      "file": "assets/hd-actors/CHR_PLAYER_RUN.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        390,
+        150,
+        315,
+        345
+      ],
+      "foot": [
+        550,
+        482
+      ],
+      "scale": 0.285,
+      "canvas": [
+        176,
+        128
+      ],
+      "anchor": [
+        88,
+        116
+      ]
+    },
+    {
+      "name": "CHR_PLAYER_JUMP",
+      "file": "assets/hd-actors/CHR_PLAYER_JUMP.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        790,
+        95,
+        255,
+        345
+      ],
+      "foot": [
+        919,
+        419
+      ],
+      "scale": 0.285,
+      "canvas": [
+        176,
+        128
+      ],
+      "anchor": [
+        88,
+        116
+      ]
+    },
+    {
+      "name": "CHR_PLAYER_DBLJUMP",
+      "file": "assets/hd-actors/CHR_PLAYER_DBLJUMP.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        1110,
+        60,
+        330,
+        350
+      ],
+      "foot": [
+        1300,
+        395
+      ],
+      "scale": 0.285,
+      "canvas": [
+        176,
+        128
+      ],
+      "anchor": [
+        88,
+        116
+      ]
+    },
+    {
+      "name": "CHR_PLAYER_SHOOT",
+      "file": "assets/hd-actors/CHR_PLAYER_SHOOT.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        20,
+        665,
+        340,
+        340
+      ],
+      "foot": [
+        150,
+        992
+      ],
+      "scale": 0.285,
+      "canvas": [
+        176,
+        128
+      ],
+      "anchor": [
+        88,
+        116
+      ]
+    },
+    {
+      "name": "CHR_PLAYER_CHARGE",
+      "file": "assets/hd-actors/CHR_PLAYER_CHARGE.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        375,
+        660,
+        348,
+        345
+      ],
+      "foot": [
+        521,
+        992
+      ],
+      "scale": 0.285,
+      "canvas": [
+        176,
+        128
+      ],
+      "anchor": [
+        88,
+        116
+      ]
+    },
+    {
+      "name": "CHR_PLAYER_FIRE",
+      "file": "assets/hd-actors/CHR_PLAYER_FIRE.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        740,
+        650,
+        392,
+        355
+      ],
+      "foot": [
+        884,
+        992
+      ],
+      "scale": 0.285,
+      "canvas": [
+        176,
+        128
+      ],
+      "anchor": [
+        88,
+        116
+      ]
+    },
+    {
+      "name": "CHR_PLAYER_HURT",
+      "file": "assets/hd-actors/CHR_PLAYER_HURT.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        1132,
+        640,
+        310,
+        370
+      ],
+      "foot": [
+        1284,
+        992
+      ],
+      "scale": 0.285,
+      "canvas": [
+        176,
+        128
+      ],
+      "anchor": [
+        88,
+        116
+      ]
+    },
+    {
+      "name": "ENM_PATROL",
+      "file": "assets/hd-actors/ENM_PATROL.png",
+      "source": "03_Enemies/ENM_ENEMY_CONCEPT_SHEET_V02.png",
+      "rect": [
+        88,
+        128,
+        330,
+        310
+      ],
+      "size": [
+        64,
+        56
+      ],
+      "flip": false
+    },
+    {
+      "name": "ENM_SCOUTRUN",
+      "file": "assets/hd-actors/ENM_SCOUTRUN.png",
+      "source": "03_Enemies/ENM_ENEMY_CONCEPT_SHEET_V02.png",
+      "rect": [
+        482,
+        136,
+        440,
+        302
+      ],
+      "size": [
+        64,
+        56
+      ],
+      "flip": false
+    },
+    {
+      "name": "ENM_TURRET",
+      "file": "assets/hd-actors/ENM_TURRET.png",
+      "source": "03_Enemies/ENM_ENEMY_CONCEPT_SHEET_V02.png",
+      "rect": [
+        995,
+        50,
+        425,
+        405
+      ],
+      "size": [
+        72,
+        64
+      ],
+      "flip": false
+    },
+    {
+      "name": "ENM_TURRETWARN",
+      "file": "assets/hd-actors/ENM_TURRETWARN.png",
+      "source": "03_Enemies/ENM_ENEMY_CONCEPT_SHEET_V02.png",
+      "rect": [
+        45,
+        550,
+        445,
+        435
+      ],
+      "size": [
+        72,
+        64
+      ],
+      "flip": false
+    },
+    {
+      "name": "ENM_GUARDIDLE",
+      "file": "assets/hd-actors/ENM_GUARDIDLE.png",
+      "source": "03_Enemies/ENM_ENEMY_CONCEPT_SHEET_V02.png",
+      "rect": [
+        528,
+        565,
+        390,
+        420
+      ],
+      "size": [
+        88,
+        96
+      ],
+      "flip": true
+    },
+    {
+      "name": "ENM_GUARDBLOCK",
+      "file": "assets/hd-actors/ENM_GUARDBLOCK.png",
+      "source": "03_Enemies/ENM_ENEMY_CONCEPT_SHEET_V02.png",
+      "rect": [
+        975,
+        570,
+        455,
+        425
+      ],
+      "size": [
+        88,
+        96
+      ],
+      "flip": true
+    },
+    {
+      "name": "WPN_GUNENERGY",
+      "file": "assets/hd-actors/WPN_GUNENERGY.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        209,
+        755,
+        85,
+        63
+      ],
+      "size": [
+        36,
+        27
+      ],
+      "limitation": "Visible weapon crop from authored pose; grip is partly occluded by the hand."
+    },
+    {
+      "name": "UI_GUNENERGY",
+      "file": "assets/hd-actors/UI_GUNENERGY.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        209,
+        755,
+        85,
+        63
+      ],
+      "size": [
+        26,
+        22
+      ]
+    },
+    {
+      "name": "WPN_GUNCANNON",
+      "file": "assets/hd-actors/WPN_GUNCANNON.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        565,
+        758,
+        110,
+        90
+      ],
+      "size": [
+        46,
+        38
+      ],
+      "limitation": "Visible weapon crop from authored pose; grip is partly occluded by the hand."
+    },
+    {
+      "name": "UI_GUNCANNON",
+      "file": "assets/hd-actors/UI_GUNCANNON.png",
+      "source": "02_Character/CHR_PLAYER_ACTION_REFERENCE_V02.png",
+      "rect": [
+        565,
+        758,
+        110,
+        90
+      ],
+      "size": [
+        26,
+        22
+      ]
+    },
+    {
+      "name": "EDITOR_PLAYER",
+      "file": "assets/hd-actors/EDITOR_PLAYER.png",
+      "size": [
+        40,
+        56
+      ],
+      "purpose": "Editor preview and unchanged gameplay proxy"
+    },
+    {
+      "name": "EDITOR_PATROL",
+      "file": "assets/hd-actors/EDITOR_PATROL.png",
+      "size": [
+        48,
+        48
+      ],
+      "purpose": "Editor preview and unchanged gameplay proxy"
+    },
+    {
+      "name": "EDITOR_TURRET",
+      "file": "assets/hd-actors/EDITOR_TURRET.png",
+      "size": [
+        56,
+        56
+      ],
+      "purpose": "Editor preview and unchanged gameplay proxy"
+    },
+    {
+      "name": "EDITOR_SHIELD",
+      "file": "assets/hd-actors/EDITOR_SHIELD.png",
+      "size": [
+        56,
+        56
+      ],
+      "purpose": "Editor preview and unchanged gameplay proxy"
+    }
+  ],
+  "limitations": [
+    "Eight authored key poses, not continuous frame animation.",
+    "No isolated weapon masters; only visible weapon crops are available.",
+    "FIRE crop truncates the farthest beam tail before the neighboring HURT pose."
+  ]
+}

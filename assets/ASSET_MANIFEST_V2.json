@@ -1,0 +1,670 @@
+{
+  "version": 2,
+  "source": "User-supplied D:/Download/SVG文件.zip, D:/Download/更新版美术资源.zip, D:/Download/机甲伙伴_救援基地_V2_空中敌机_SVG素材包.zip and 美术规范 V2.0",
+  "rights": "User-supplied assets; no independent license assertion",
+  "frameType": "Static key poses, not complete animation sheets",
+  "assets": [
+    {
+      "file": "assets/characters/CHR_BUDDY_IDLE_R_V02.svg",
+      "png": "assets/characters/CHR_BUDDY_IDLE_R_V02.png",
+      "width": 128,
+      "height": 128,
+      "alpha": true,
+      "contentBounds": {
+        "x": 26,
+        "y": 22,
+        "w": 80,
+        "h": 101
+      },
+      "sha256": "fe42d97a3ca97b5fd43ed8c2bbf6c8a0d8fdb295337d993838b8b3b94bad89f5"
+    },
+    {
+      "file": "assets/characters/CHR_PLAYER_CHARGE_R_V02.svg",
+      "png": "assets/characters/CHR_PLAYER_CHARGE_R_V02.png",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 13,
+        "y": 8,
+        "w": 130,
+        "h": 121
+      },
+      "sha256": "611de002c20e4885e8a2b243db8958e1f5c46cec629d459de0eb5c0153e27acc"
+    },
+    {
+      "file": "assets/characters/CHR_PLAYER_DBLJUMP_R_V02.svg",
+      "png": "assets/characters/CHR_PLAYER_DBLJUMP_R_V02.png",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 13,
+        "y": 8,
+        "w": 104,
+        "h": 123
+      },
+      "sha256": "a24aa682521ada5f37b0c7d44a9ebd9d9119cdb20ddb2ba5380c5333565d684a"
+    },
+    {
+      "file": "assets/characters/CHR_PLAYER_FIRE_R_V02.svg",
+      "png": "assets/characters/CHR_PLAYER_FIRE_R_V02.png",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 13,
+        "y": 8,
+        "w": 117,
+        "h": 123
+      },
+      "sha256": "f369fc76b545a9162ec28a8bc1479c4902786e13ac1a4b8511281fe86cb01f33"
+    },
+    {
+      "file": "assets/characters/CHR_PLAYER_HURT_R_V02.svg",
+      "png": "assets/characters/CHR_PLAYER_HURT_R_V02.png",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 8,
+        "y": 8,
+        "w": 111,
+        "h": 121
+      },
+      "sha256": "9f5a58cb0d70ba027e1f2a2002f8fffcb6272280568a239de083d105b75b626a"
+    },
+    {
+      "file": "assets/characters/CHR_PLAYER_IDLE_R_V02.svg",
+      "png": "assets/characters/CHR_PLAYER_IDLE_R_V02.png",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 13,
+        "y": 8,
+        "w": 104,
+        "h": 121
+      },
+      "sha256": "57cb897bab50d097211e3a9119dc123e2d2c241632472e3054800518a66ef99a"
+    },
+    {
+      "file": "assets/characters/CHR_PLAYER_JUMP_R_V02.svg",
+      "png": "assets/characters/CHR_PLAYER_JUMP_R_V02.png",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 13,
+        "y": 8,
+        "w": 104,
+        "h": 123
+      },
+      "sha256": "35754d62171ef6c8622803ffdf66406811788fece9918f90e56e159550c69ba4"
+    },
+    {
+      "file": "assets/characters/CHR_PLAYER_RUN_R_V02.svg",
+      "png": "assets/characters/CHR_PLAYER_RUN_R_V02.png",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 3,
+        "y": 8,
+        "w": 114,
+        "h": 123
+      },
+      "sha256": "7f3a12cda3e220a4c7b954b75943061d7e495de5a74e5a07a737367ccdaa4a9b"
+    },
+    {
+      "file": "assets/characters/CHR_PLAYER_SHOOT_R_V02.svg",
+      "png": "assets/characters/CHR_PLAYER_SHOOT_R_V02.png",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 13,
+        "y": 8,
+        "w": 117,
+        "h": 121
+      },
+      "sha256": "109895fa364b97c76b53f7fa3ec57a165c395ce2881a7ca3656d878f8c78abd3"
+    },
+    {
+      "file": "assets/enemies/ENM_SCOUT_IDLE_R_V02.svg",
+      "png": "assets/enemies/ENM_SCOUT_IDLE_R_V02.png",
+      "width": 128,
+      "height": 112,
+      "alpha": true,
+      "contentBounds": {
+        "x": 8,
+        "y": 26,
+        "w": 103,
+        "h": 74
+      },
+      "sha256": "6c1faa89dcce5d25b41e08afd88aa43375b6f9291bb430258a66b48c3e892082"
+    },
+    {
+      "file": "assets/enemies/ENM_SCOUT_RUN_R_V02.svg",
+      "png": "assets/enemies/ENM_SCOUT_RUN_R_V02.png",
+      "width": 128,
+      "height": 112,
+      "alpha": true,
+      "contentBounds": {
+        "x": 0,
+        "y": 23,
+        "w": 109,
+        "h": 79
+      },
+      "sha256": "bec975f6de2dcf032ad223305fada749426eca585cfce862c7c5bca3904b26e1"
+    },
+    {
+      "file": "assets/enemies/ENM_SHIELD_GUARD_BLOCK_R_V02.svg",
+      "png": "assets/enemies/ENM_SHIELD_GUARD_BLOCK_R_V02.png",
+      "width": 160,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 18,
+        "y": 20,
+        "w": 125,
+        "h": 108
+      },
+      "sha256": "5beb158cac6386ecd91529490351a9d3dc284e0985f8b4194476de245d419a32"
+    },
+    {
+      "file": "assets/enemies/ENM_SHIELD_GUARD_IDLE_R_V02.svg",
+      "png": "assets/enemies/ENM_SHIELD_GUARD_IDLE_R_V02.png",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 18,
+        "y": 24,
+        "w": 116,
+        "h": 104
+      },
+      "sha256": "4e8feb5154fa98be831f70358b11997f4cf3fb7a36ac009b45e5dd9e4f53eb47"
+    },
+    {
+      "file": "assets/enemies/ENM_TURRET_IDLE_R_V02.svg",
+      "png": "assets/enemies/ENM_TURRET_IDLE_R_V02.png",
+      "width": 144,
+      "height": 120,
+      "alpha": true,
+      "contentBounds": {
+        "x": 20,
+        "y": 40,
+        "w": 111,
+        "h": 72
+      },
+      "sha256": "cdd36a536363444a748b1263ac7d54355934ebb0e47945a917cdbc5612156bb7"
+    },
+    {
+      "file": "assets/enemies/ENM_TURRET_WARN_R_V02.svg",
+      "png": "assets/enemies/ENM_TURRET_WARN_R_V02.png",
+      "width": 160,
+      "height": 120,
+      "alpha": true,
+      "contentBounds": {
+        "x": 20,
+        "y": 40,
+        "w": 126,
+        "h": 72
+      },
+      "sha256": "d49047a73325ac1e805f6b07f26fc11f701801ecdba9a88bab7e97328b5957ed"
+    },
+    {
+      "file": "assets/environment/ENV_BACKGROUND_FAR_960X270_V02.svg",
+      "png": "assets/environment/ENV_BACKGROUND_FAR_960X270_V02.png",
+      "width": 960,
+      "height": 270,
+      "alpha": true,
+      "contentBounds": {
+        "x": 0,
+        "y": 62,
+        "w": 960,
+        "h": 208
+      },
+      "sha256": "d814e465cb2335f623f8d5e6ec491c2225b2c80e0eb302ea33af2ca5d02ac9a2"
+    },
+    {
+      "file": "assets/environment/ENV_DOOR_LOCKED_V02.svg",
+      "png": "assets/environment/ENV_DOOR_LOCKED_V02.png",
+      "width": 128,
+      "height": 136,
+      "alpha": true,
+      "contentBounds": {
+        "x": 16,
+        "y": 5,
+        "w": 96,
+        "h": 120
+      },
+      "sha256": "2c61ffd52467c65446eefd3f8dba4c070377ec623fae37a90d919ccee59ca88a"
+    },
+    {
+      "file": "assets/environment/ENV_PLATFORM_TILE_64_V02.svg",
+      "png": "assets/environment/ENV_PLATFORM_TILE_64_V02.png",
+      "width": 64,
+      "height": 64,
+      "alpha": true,
+      "contentBounds": {
+        "x": 1,
+        "y": 1,
+        "w": 62,
+        "h": 62
+      },
+      "sha256": "24b1f0824dd174dc2227e744246ad90488e6b534ac7c2aaee4e6d3a4b1f7dc6f"
+    },
+    {
+      "file": "assets/environment/ENV_RESCUE_EXIT_V02.svg",
+      "png": "assets/environment/ENV_RESCUE_EXIT_V02.png",
+      "width": 128,
+      "height": 136,
+      "alpha": true,
+      "contentBounds": {
+        "x": 15,
+        "y": 5,
+        "w": 98,
+        "h": 120
+      },
+      "sha256": "cd8da72ecd64bc3b7a15ba8c8ebfd26d53f9d28e36f0d6dd5ffb3d92ac4dbf61"
+    },
+    {
+      "file": "assets/environment/ENV_RETURN_PORTAL_V02.svg",
+      "png": "assets/environment/ENV_RETURN_PORTAL_V02.png",
+      "width": 128,
+      "height": 128,
+      "alpha": true,
+      "contentBounds": {
+        "x": 18,
+        "y": 5,
+        "w": 92,
+        "h": 114
+      },
+      "sha256": "df38470f8e4a039a301778da0580942f39825558d52cb34433a8384879196c36"
+    },
+    {
+      "file": "assets/environment/ENV_SUPPLY_STATION_V02.svg",
+      "png": "assets/environment/ENV_SUPPLY_STATION_V02.png",
+      "width": 128,
+      "height": 128,
+      "alpha": true,
+      "contentBounds": {
+        "x": 8,
+        "y": 10,
+        "w": 112,
+        "h": 105
+      },
+      "sha256": "a35a7df3b8ea05841d264563c2dcf10d8b791179c4124e870aa6207d80ca3f42"
+    },
+    {
+      "file": "assets/environment/ENV_TRAINING_TARGET_V02.svg",
+      "png": "assets/environment/ENV_TRAINING_TARGET_V02.png",
+      "width": 128,
+      "height": 128,
+      "alpha": true,
+      "contentBounds": {
+        "x": 30,
+        "y": 17,
+        "w": 68,
+        "h": 98
+      },
+      "sha256": "d32c32738524a894367f786dd111d27bed2f78acb7fffa5b7a17bb6827c2cd92"
+    },
+    {
+      "file": "assets/fx/FX_BREAKER_CHARGE_RING_V02.svg",
+      "png": "assets/fx/FX_BREAKER_CHARGE_RING_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 9,
+        "y": 1,
+        "w": 78,
+        "h": 86
+      },
+      "sha256": "4d6e8eace3c640c421a3584e82916e1c02b4d9d06ce8e8830a9872de0e450932"
+    },
+    {
+      "file": "assets/fx/FX_BREAKER_PROJECTILE_R_V02.svg",
+      "png": "assets/fx/FX_BREAKER_PROJECTILE_R_V02.png",
+      "width": 112,
+      "height": 64,
+      "alpha": true,
+      "contentBounds": {
+        "x": 0,
+        "y": 13,
+        "w": 94,
+        "h": 38
+      },
+      "sha256": "e280a1fbad57afb2f6ded76f78c494fc2f97a375046af0e55b2f1bf08a66c903"
+    },
+    {
+      "file": "assets/fx/FX_PULSE_PROJECTILE_R_V02.svg",
+      "png": "assets/fx/FX_PULSE_PROJECTILE_R_V02.png",
+      "width": 72,
+      "height": 48,
+      "alpha": true,
+      "contentBounds": {
+        "x": 0,
+        "y": 15,
+        "w": 65,
+        "h": 18
+      },
+      "sha256": "f123266ff7c21220d2a43bf61a3eb096c1124b1a8ae2863d6d52928fe3eac9b1"
+    },
+    {
+      "file": "assets/fx/FX_SHIELD_BLOCK_V02.svg",
+      "png": "assets/fx/FX_SHIELD_BLOCK_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 4,
+        "y": 2,
+        "w": 88,
+        "h": 92
+      },
+      "sha256": "1b50db0ee6747982b4f981961880087f2d84efa84bf704f414d618475b059098"
+    },
+    {
+      "file": "assets/fx/FX_TURRET_WARNING_LINE_V02.svg",
+      "png": "assets/fx/FX_TURRET_WARNING_LINE_V02.png",
+      "width": 128,
+      "height": 32,
+      "alpha": true,
+      "contentBounds": {
+        "x": 0,
+        "y": 9,
+        "w": 127,
+        "h": 16
+      },
+      "sha256": "5fc7f3547af12fa353848b2391ab227205ddfae625395642270e8b9fb0d0d155"
+    },
+    {
+      "file": "assets/items/ITM_CHECKPOINT_BEACON_V02.svg",
+      "png": "assets/items/ITM_CHECKPOINT_BEACON_V02.png",
+      "width": 96,
+      "height": 104,
+      "alpha": true,
+      "contentBounds": {
+        "x": 20,
+        "y": 3,
+        "w": 56,
+        "h": 86
+      },
+      "sha256": "4c6728fa40985e2b3cb795363006a35cc3ddf2ff6426e3a9918034c62c053909"
+    },
+    {
+      "file": "assets/items/ITM_COIN_GOLD_V02.svg",
+      "png": "assets/items/ITM_COIN_GOLD_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 12,
+        "y": 12,
+        "w": 72,
+        "h": 72
+      },
+      "sha256": "2e3c125a3714d220dc8bb479ff8129d3500be56be94e546a5e25fb7591f5083a"
+    },
+    {
+      "file": "assets/items/ITM_HEALTH_CAPSULE_V02.svg",
+      "png": "assets/items/ITM_HEALTH_CAPSULE_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 13,
+        "y": 10,
+        "w": 71,
+        "h": 76
+      },
+      "sha256": "3b828b40541f928cd757a9a45861167fc0cc5757c3942f6c33006e017a1831c1"
+    },
+    {
+      "file": "assets/items/ITM_SHIELD_CRYSTAL_V02.svg",
+      "png": "assets/items/ITM_SHIELD_CRYSTAL_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 12,
+        "y": 6,
+        "w": 72,
+        "h": 84
+      },
+      "sha256": "fe05e158dcc98c0677dd267023f86c28f7b09916e0dd9ede4bcabffcba89ca05"
+    },
+    {
+      "file": "assets/ui/UI_HUD_COIN_V02.svg",
+      "png": "assets/ui/UI_HUD_COIN_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 12,
+        "y": 12,
+        "w": 72,
+        "h": 72
+      },
+      "sha256": "2e3c125a3714d220dc8bb479ff8129d3500be56be94e546a5e25fb7591f5083a"
+    },
+    {
+      "file": "assets/ui/UI_HUD_HEART_V02.svg",
+      "png": "assets/ui/UI_HUD_HEART_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 10,
+        "y": 15,
+        "w": 76,
+        "h": 67
+      },
+      "sha256": "67ab05e847cd0ee96d4e7636c63bec88141ac63d56c422d7c12402de0731a972"
+    },
+    {
+      "file": "assets/ui/UI_INTERACT_E_V02.svg",
+      "png": "assets/ui/UI_INTERACT_E_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 7,
+        "y": 7,
+        "w": 82,
+        "h": 82
+      },
+      "sha256": "6603ccc4e66ad21f619d9ec18adc7a6779a0161e729ac07f8fb74b8fab42f856"
+    },
+    {
+      "file": "assets/ui/UI_WEAPON_BREAKER_V02.svg",
+      "png": "assets/ui/UI_WEAPON_BREAKER_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 3,
+        "y": 27,
+        "w": 93,
+        "h": 69
+      },
+      "sha256": "4f99a181bcb7d8be894fdddb77d453b1cb592a605b09a67e5e5105819786a189"
+    },
+    {
+      "file": "assets/ui/UI_WEAPON_PULSE_V02.svg",
+      "png": "assets/ui/UI_WEAPON_PULSE_V02.png",
+      "width": 96,
+      "height": 96,
+      "alpha": true,
+      "contentBounds": {
+        "x": 7,
+        "y": 28,
+        "w": 89,
+        "h": 65
+      },
+      "sha256": "a84067a21b35a50b5a51eb596d5d57ff76a24f1e90733b4cfe82536ec11e1740"
+    },
+    {
+      "file": "assets/weapons/WPN_BREAKER_CANNON_R_V02.svg",
+      "png": "assets/weapons/WPN_BREAKER_CANNON_R_V02.png",
+      "width": 144,
+      "height": 112,
+      "alpha": true,
+      "contentBounds": {
+        "x": 3,
+        "y": 27,
+        "w": 127,
+        "h": 76
+      },
+      "sha256": "0fb55594fd47953ac015fb92ff90a7ea126f5fb5cadc80e25236e519a2ed561a"
+    },
+    {
+      "file": "assets/weapons/WPN_PULSE_GUN_R_V02.svg",
+      "png": "assets/weapons/WPN_PULSE_GUN_R_V02.png",
+      "width": 144,
+      "height": 112,
+      "alpha": true,
+      "contentBounds": {
+        "x": 7,
+        "y": 28,
+        "w": 124,
+        "h": 65
+      },
+      "sha256": "5054abad255dda49c034135db848557293f6a4ce738309a906138a54654728c2"
+    },
+    {
+      "file": "assets/air-fighter-idle.svg",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 0,
+        "y": 32,
+        "w": 122,
+        "h": 73
+      },
+      "sha256": "b4071789279dc73f76a8fdafd7b79cc1b067a6ab6b5ff4425be0a4daacce36c0",
+      "sourceAsset": "ENM_AIR_FIGHTER_IDLE_R_V02.svg",
+      "source": "User-supplied V2 air enemy SVG package; facing right"
+    },
+    {
+      "file": "assets/air-fighter-warn.svg",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 0,
+        "y": 32,
+        "w": 143,
+        "h": 73
+      },
+      "sha256": "bd16e2286ba0b1822d9bb50a250dfb315c60461ac5697648c2a8fe646ba3ab7e",
+      "sourceAsset": "ENM_AIR_FIGHTER_WARN_R_V02.svg",
+      "source": "User-supplied V2 air enemy SVG package; facing right"
+    },
+    {
+      "file": "assets/air-fighter-attack.svg",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 0,
+        "y": 32,
+        "w": 129,
+        "h": 73
+      },
+      "sha256": "3005b7cf628c554d988ac54a78b7992de26fefba0ee893e5b3dbf2f08861d2c3",
+      "sourceAsset": "ENM_AIR_FIGHTER_ATTACK_R_V02.svg",
+      "source": "User-supplied V2 air enemy SVG package; facing right"
+    },
+    {
+      "file": "assets/air-fighter-hit.svg",
+      "width": 144,
+      "height": 144,
+      "alpha": true,
+      "contentBounds": {
+        "x": 0,
+        "y": 32,
+        "w": 127,
+        "h": 73
+      },
+      "sha256": "e24c5f0341f133eb6bb4e4d36dc2e46565746995d597d099e666940ac0f24da3",
+      "sourceAsset": "ENM_AIR_FIGHTER_HIT_R_V02.svg",
+      "source": "User-supplied V2 air enemy SVG package; facing right"
+    }
+  ],
+  "runtime": {
+    "Partner": "assets/v2-runtime/Partner.png",
+    "Patrol": "assets/v2-runtime/Patrol.png",
+    "Turret": "assets/v2-runtime/Turret.png",
+    "Dummy": "assets/v2-runtime/Dummy.png",
+    "Coin": "assets/v2-runtime/Coin.png",
+    "Shop": "assets/v2-runtime/Shop.png",
+    "Checkpoint": "assets/v2-runtime/Checkpoint.png",
+    "JumpBeacon": "assets/v2-runtime/JumpBeacon.png",
+    "Exit": "assets/v2-runtime/Exit.png",
+    "ReturnPortal": "assets/v2-runtime/ReturnPortal.png",
+    "CannonCrate": "assets/v2-runtime/CannonCrate.png",
+    "ChargeGlow": "assets/v2-runtime/ChargeGlow.png",
+    "AimLine": "assets/v2-runtime/AimLine.png",
+    "TurretWarning": "assets/v2-runtime/TurretWarning.png",
+    "HeroIDLE": "assets/v2-runtime/HERO_IDLE.png",
+    "HeroRUN": "assets/v2-runtime/HERO_RUN.png",
+    "HeroJUMP": "assets/v2-runtime/HERO_JUMP.png",
+    "HeroDBLJUMP": "assets/v2-runtime/HERO_DBLJUMP.png",
+    "HeroSHOOT": "assets/v2-runtime/HERO_SHOOT.png",
+    "HeroCHARGE": "assets/v2-runtime/HERO_CHARGE.png",
+    "HeroFIRE": "assets/v2-runtime/HERO_FIRE.png",
+    "HeroHURT": "assets/v2-runtime/HERO_HURT.png",
+    "GunEnergy": "assets/v2-runtime/GunEnergy.png",
+    "GunCannon": "assets/v2-runtime/GunCannon.png",
+    "GuardIdle": "assets/v2-runtime/GuardIdle.png",
+    "GuardBlock": "assets/v2-runtime/GuardBlock.png",
+    "TurretWarn": "assets/v2-runtime/TurretWarn.png",
+    "ScoutRun": "assets/v2-runtime/ScoutRun.png",
+    "BulletEnergy": "assets/v2-runtime/BulletEnergy.png",
+    "BulletCannon": "assets/v2-runtime/BulletCannon.png",
+    "ShieldImpact": "assets/v2-runtime/ShieldImpact.png",
+    "HudHeart": "assets/v2-runtime/HudHeart.png",
+    "HudCoin": "assets/v2-runtime/HudCoin.png",
+    "HudEnergy": "assets/v2-runtime/HudEnergy.png",
+    "HudCannon": "assets/v2-runtime/HudCannon.png",
+    "Interact": "assets/v2-runtime/Interact.png",
+    "AirFighterIdle": "assets/air-fighter-idle.svg",
+    "AirFighterWarn": "assets/air-fighter-warn.svg",
+    "AirFighterAttack": "assets/air-fighter-attack.svg",
+    "AirFighterHit": "assets/air-fighter-hit.svg",
+    "Warning": "assets/v2-runtime/WARNING.png",
+    "Gate": "assets/v2-runtime/GATE.png",
+    "Modal": "assets/v2-runtime/MODAL.png",
+    "Hud": "assets/v2-runtime/HUD.png",
+    "Backdrop3200": "assets/v2-runtime/BACKDROP_3200.png",
+    "Backdrop6400": "assets/v2-runtime/BACKDROP_6400.png",
+    "Platform760x80": "assets/v2-runtime/Platform760x80.png",
+    "Platform2340x80": "assets/v2-runtime/Platform2340x80.png",
+    "Platform96x24": "assets/v2-runtime/Platform96x24.png",
+    "Platform190x28": "assets/v2-runtime/Platform190x28.png",
+    "Platform40x96": "assets/v2-runtime/Platform40x96.png",
+    "Platform780x80": "assets/base-platform-780x80.svg",
+    "Platform3400x80": "assets/base-platform-3400x80.svg",
+    "Platform1390x80": "assets/base-platform-1390x80.svg",
+    "Platform470x80": "assets/v2-runtime/Platform470x80.png",
+    "Platform160x24": "assets/base-platform-160x24.svg",
+    "Platform210x28": "assets/base-platform-210x28.svg",
+    "Platform270x80": "assets/base-platform-270x80.svg",
+    "Platform390x80": "assets/base-platform-390x80.svg",
+    "Platform200x24": "assets/base-platform-200x24.svg",
+    "Platform100x24": "assets/base-platform-100x24.svg",
+    "Platform490x80": "assets/base-platform-490x80.svg",
+    "Platform180x24": "assets/base-platform-180x24.svg",
+    "Platform120x24": "assets/base-platform-120x24.svg",
+    "Platform150x24": "assets/base-platform-150x24.svg",
+    "Platform40x90": "assets/base-platform-40x90.svg",
+    "Platform280x24": "assets/base-platform-280x24.svg",
+    "Platform40x60": "assets/base-platform-40x60.svg"
+  }
+}

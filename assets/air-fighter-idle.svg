@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144"><defs>
+<linearGradient id="armor" x1="0" y1="0" x2="0.85" y2="1"><stop stop-color="#FFFFFF"/><stop offset="0.55" stop-color="#E5EBF1"/><stop offset="1" stop-color="#AEBBC8"/></linearGradient>
+<linearGradient id="armorDark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#75869A"/><stop offset="1" stop-color="#263C58"/></linearGradient>
+<linearGradient id="visor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF2EE"/><stop offset="0.45" stop-color="#FF8F7C"/><stop offset="1" stop-color="#D84A48"/></linearGradient>
+<linearGradient id="wingGlow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F2EFFF"/><stop offset="0.5" stop-color="#B7A5F2"/><stop offset="1" stop-color="#8A6CF3"/></linearGradient>
+<linearGradient id="thrust" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#E9F8FF" stop-opacity="0"/><stop offset="0.3" stop-color="#C8F8FF" stop-opacity="0.5"/><stop offset="1" stop-color="#20C9BD" stop-opacity="0.95"/></linearGradient>
+</defs>
+<ellipse cx="30" cy="84" rx="7" ry="3" fill="#20C9BD" opacity="0.15"/><ellipse cx="51" cy="92" rx="5" ry="2.5" fill="#20C9BD" opacity="0.1"/>
+<path d="M18 70 C31 62, 45 56, 61 53 L92 53 L108 59 L116 71 L109 83 L91 88 L61 89 C44 86, 31 82, 19 75 Z" fill="url(#armor)" stroke="#263C58" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M44 59 L82 58 L98 64 L103 72 L98 80 L80 84 L44 83 L32 73 Z" fill="#3C4B61" stroke="#263C58" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M52 61 L78 61 L88 66 L91 71 L87 77 L74 80 L53 79 L44 71 Z" fill="url(#visor)" stroke="#FF8F7C" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M52 53 L77 40 L87 54 L74 59 Z" fill="url(#armor)" stroke="#263C58" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 89 L75 102 L82 88 L69 84 Z" fill="url(#armor)" stroke="#263C58" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 61 L15 48 L11 55 L27 69 Z" fill="#FFD24A" stroke="#263C58" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M34 84 L13 96 L9 88 L27 78 Z" fill="#FFD24A" stroke="#263C58" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M87 52 L101 41 L120 41 L104 57 Z" fill="url(#armor)" stroke="#263C58" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M83 90 L99 98 L116 99 L100 86 Z" fill="url(#armor)" stroke="#263C58" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M79 46 L95 34 L101 38 L90 52 Z" fill="#FFD24A" stroke="#263C58" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M77 96 L93 103 L99 99 L89 86 Z" fill="#FFD24A" stroke="#263C58" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="21" y="63" width="11" height="8" rx="2" fill="#AEBBC8" stroke="#263C58" stroke-width="2.2"/>
+<rect x="20" y="74" width="11" height="8" rx="2" fill="#AEBBC8" stroke="#263C58" stroke-width="2.2"/>
+<path d="M13 66 L3 66 L5 77 L13 79 Z" fill="#3C4B61" stroke="#263C58" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M18 66 L4 65 L-2 72 L4 79 L18 79 Z" fill="url(#thrust)" stroke="none"/>
+<path d="M100 66 L110 66 L115 72 L110 78 L100 78 Z" fill="#3C4B61" stroke="#263C58" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M108 68 L116 65 L118 69 L113 74 L118 79 L115 82 L108 77 Z" fill="#FF685E" stroke="#263C58" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="61" y="66" width="15" height="7" rx="2" fill="#FF685E" stroke="#263C58" stroke-width="2"/>
+<rect x="64" y="68" width="8" height="2.8" rx="1" fill="#FFD24A" stroke="#FFD24A" stroke-width="0.5"/>
+<circle cx="90" cy="72" r="3.8" fill="#FF685E" stroke="#263C58" stroke-width="1.4"/>
+
+
+
+
+</svg>

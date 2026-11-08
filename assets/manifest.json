@@ -1,0 +1,297 @@
+{
+  "source": "Original local SVG authored for this project",
+  "networkRequired": false,
+  "style": "Bright vector, mint allies, orange danger, gold rewards",
+  "assets": [
+    {
+      "file": "hero.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "patrol.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "turret.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "dummy.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "terrain.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "wall.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "gate.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "coin.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "bullet.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "enemy-bullet.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "shop.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "checkpoint.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "beacon.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "exit.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "partner.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "spark.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "warning.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "hud.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "modal.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "backdrop.svg",
+      "source": "project-authored",
+      "license": "Project source license; no third-party images"
+    },
+    {
+      "file": "base-platform-40x40.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-shield.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-crate.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-portal.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-line.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-charge.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-bar.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-hud.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-scout-drone.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-armored-drone.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-jammer-core.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-trial-drone.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-missile.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-missile-gun.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-missile-icon.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-bomb-marker.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-missile-reticle.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-backdrop.svg",
+      "source": "project-authored",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "air-fighter-idle.svg",
+      "source": "user-supplied V2 air fighter SVG",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "air-fighter-warn.svg",
+      "source": "user-supplied V2 air fighter SVG",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "air-fighter-attack.svg",
+      "source": "user-supplied V2 air fighter SVG",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "air-fighter-hit.svg",
+      "source": "user-supplied V2 air fighter SVG",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-780x80.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-3400x80.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-1390x80.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-270x80.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-160x24.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-210x28.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-120x24.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-180x24.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-150x24.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-390x80.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-280x24.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-200x24.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-100x24.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-490x80.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-40x90.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "base-platform-40x60.svg",
+      "source": "project-authored local placeholder",
+      "license": "Original local vector artwork"
+    }
+  ]
+}

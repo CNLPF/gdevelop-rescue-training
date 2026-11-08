@@ -1,0 +1,16 @@
+await harness.goToScene('RescueBase');await harness.stepFrames(5);
+const v=n=>harness.getSceneVariable(n).value;
+harness.assert(v('GameMode')==='Playing'&&v('Stage')==='Entry','base starts playing offline');
+harness.assert(harness.getObjects('Patrol').length===6&&harness.getObjects('Turret').length===5&&harness.getObjects('Shield').length===4,'fifteen authored ground enemies');
+harness.assert(harness.getObjects('ScoutDrone').length===4&&harness.getObjects('ArmoredDrone').length===3,'seven authored aerial enemies');
+harness.assert(harness.getObjects('Coin').length===32,'32 local map coins');
+harness.assert(harness.getObjects('Gate').length===6&&harness.getObjects('Shop').length===4,'six gates and four shops are present');
+harness.assert(harness.getObjects('TrialDrone').length===3&&harness.getObjects('JammerCore').length===1,'trial and relay objects are present');
+harness.assert(harness.getObjects('Backdrop')[0].width===8400,'backdrop covers the 8400px level');
+harness.assert(!harness.getRuntimeLayer('Modal').isVisible(),'modal hidden');
+const start=harness.getObjects('Player')[0].x;harness.setKeyPressed('Right',true);await harness.stepFrames(12);harness.releaseAllInputs();await harness.stepFrames(3);
+harness.assert(harness.getObjects('Player')[0].x>start+20,'native movement');
+harness.setKeyPressed('w',true);await harness.stepFrames(24);harness.releaseAllInputs();await harness.stepFrames(1);
+harness.assert(v('EnergyShots')>=2,'W fires continuously');
+harness.assert(v('CannonShots')===0&&v('MissileShots')===0&&!v('HasCannon')&&!v('HasMissile'),'cannon and missile are unavailable initially');
+await harness.takeScreenshot('Rescue base initial HUD');

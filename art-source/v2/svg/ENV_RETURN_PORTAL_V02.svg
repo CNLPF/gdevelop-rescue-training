@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><defs>
+<linearGradient id="armor" x1="0" y1="0" x2="0.85" y2="1"><stop stop-color="#FFFFFF"/><stop offset="0.55" stop-color="#E5EBF1"/><stop offset="1" stop-color="#AEBBC8"/></linearGradient>
+<linearGradient id="armorDark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#75869A"/><stop offset="1" stop-color="#263C58"/></linearGradient>
+<linearGradient id="visor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D8F8FF"/><stop offset="0.45" stop-color="#41B7FF"/><stop offset="1" stop-color="#1766A6"/></linearGradient>
+<linearGradient id="energy" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F1FFFF"/><stop offset="0.5" stop-color="#41B7FF"/><stop offset="1" stop-color="#20C9BD"/></linearGradient>
+<linearGradient id="vio" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F2EFFF"/><stop offset="0.5" stop-color="#B7A5F2"/><stop offset="1" stop-color="#8A6CF3"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF1A8"/><stop offset="1" stop-color="#E89A20"/></linearGradient>
+</defs><ellipse cx="64" cy="62" rx="42" ry="53" fill="none" stroke="#41B7FF" stroke-width="7"/><ellipse cx="64" cy="62" rx="32" ry="43" fill="none" stroke="#20C9BD" stroke-width="3"/><path d="M45 62 Q64 34 83 62 Q64 90 45 62 Z" fill="url(#energy)" stroke="#F4F7FA" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M56 54 L68 62 L56 70" fill="none" stroke="#F4F7FA" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>

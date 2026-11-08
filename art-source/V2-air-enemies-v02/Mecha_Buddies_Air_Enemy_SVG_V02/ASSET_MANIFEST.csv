@@ -1,0 +1,5 @@
+filename,category,description
+ENM_AIR_FIGHTER_IDLE_R_V02.svg,enemies,air combat machine idle/flying state facing right
+ENM_AIR_FIGHTER_ATTACK_R_V02.svg,enemies,air combat machine attack state facing right
+ENM_AIR_FIGHTER_WARN_R_V02.svg,enemies,air combat machine warning/aiming state facing right
+ENM_AIR_FIGHTER_HIT_R_V02.svg,enemies,air combat machine hit/damaged state facing right
