@@ -28,6 +28,21 @@
 
 本项目使用 Git 保存可回滚历史。正式 `game.json`、源码、测试、构建脚本和美术源文件进入提交；自动保存、预览项目、测试证据和临时候选文件不进入提交。变更与回滚流程见 [`docs/VERSION_CONTROL.md`](docs/VERSION_CONTROL.md)。
 
+## 手工地图与源码边界
+
+用户开始在 GDevelop 中直接维护地图后，保存后的 `game.json` 是场景实例和运行时事件的权威。`src/` 是可读源码与测试入口，修改它不会自动更新现有预览。
+
+只读检查保存后的地图与稳定 Id：
+
+```powershell
+node .\scripts\inspect-game-json.cjs --scene=RescueBase --ids
+node .\scripts\inspect-game-json.cjs --scene=RescueBase --details
+```
+
+检查器不会写入 `game.json`。完整的数据权威关系、事件流程、变量字典和地图耦合风险见 [`docs/GAME_ARCHITECTURE.md`](docs/GAME_ARCHITECTURE.md)。
+
+**不要在手工编辑地图后直接运行旧的地图生成流程。** `build-base.cjs` 会按 `src/base/config.js` 中的历史坐标清空并重建场景实例；`--check` 和 `--output` 虽不覆盖正式文件，也会在内存中重建旧地图，因此不能作为新版编辑器地图的安全校验。
+
 ## 操作
 
 | 按键 | 功能 |
@@ -140,6 +155,7 @@
 ## 项目结构
 
 - `game.json`：GDevelop 项目、场景、对象实例、事件和玩法测试。
+- `docs/GAME_ARCHITECTURE.md`：数据权威、每帧事件流程、场景与实例变量字典、地图耦合和扩展契约。
 - `src/base/config.js`：地图、区域、敌人、金币、商店、武器参数和纯规则。
 - `src/base/input.js`：输入、换枪、蓄力／锁定、商店购买和试炼重置。
 - `src/base/combat.js`：目标选择、统一伤害、奖励、飞行敌人状态机和弹丸追踪。
@@ -155,27 +171,28 @@
 - `art-source/`：用户提供的美术包、说明和提取来源记录。
 - `tests/*.test.js`：可由 Node 直接执行的纯规则测试。
 - `tests/*.gameplay.js`：需要在 GDevelop 游戏测试环境运行的真实玩法脚本。
-- `scripts/build-base.cjs`：配置驱动的离线项目重建与 libGD 序列化校验。
+- `scripts/inspect-game-json.cjs`：只读检查布局、实例、稳定 Id 和关键变量的工具。
+- `scripts/build-base.cjs`：历史配置驱动的项目重建工具；手工地图阶段不得直接用于覆盖当前场景实例。
 
 ## 构建与测试
 
-仅修改 JavaScript 源码后，可选择让构建脚本把最新模块和玩法测试写入 `game.json`。执行前必须关闭 GDevelop：
+当前项目已进入手工地图维护阶段。修改 JavaScript 源码后，必须先备份或提交编辑器保存的 `game.json`，再设计“只更新内嵌事件、保留实例”的专用迁移，不能直接运行旧生成器：
 
 ```powershell
-node .\scripts\build-base.cjs
+# 保护当前地图：先提交编辑器保存结果
+git status
+git add game.json
+git commit -m "map: author RescueBase layout"
 ```
 
-只读校验不会覆盖 `game.json`，可在编辑器关闭或打开时执行：
+只读检查当前文件：
 
 ```powershell
-node .\scripts\build-base.cjs --check
+node .\scripts\inspect-game-json.cjs --scene=RescueBase
+node .\scripts\inspect-game-json.cjs --scene=RescueBase --ids --details
 ```
 
-需要先产出候选文件、暂不替换正式项目时，可指定独立输出：
-
-```powershell
-node .\scripts\build-base.cjs --output=game.v04-preview.json
-```
+`build-base.cjs --check` 只表示历史生成结果可通过序列化校验，不表示编辑器中的新版地图有效；它会基于旧 `BASE` 配置重建内存场景。若确实要从源码完整重建历史地图，必须使用独立输出文件并人工比较，除非明确决定舍弃当前编辑器地图。
 
 纯规则测试不启动 GDevelop：
 
@@ -193,7 +210,13 @@ node --test .\tests\rules.test.js .\tests\base-rules.test.js .\tests\architectur
 
 ## 当前验证状态
 
-截至 2026-11-08 的敌人 AI 改造收尾：
+截至 2026-11-09 的架构文档整理：
+
+- 本轮只读取了现有 `game.json`、源码和测试文件，补充了架构文档与只读检查器；没有启动 GDevelop，没有执行玩法测试，也没有修改地图实例。
+- 当前 `game.json` 元数据为 GDevelop `5.6.286`；实际编辑器版本应以打开项目时显示为准。
+- 当前 `RescueBase` 包含 139 个实例、46 个场景对象定义、76 个场景变量和 8 个事件组；`TrainingRoom` 包含 54 个实例、43 个场景对象定义、64 个场景变量和 8 个事件组。
+
+以下是 2026-11-08 敌人 AI 改造阶段的**历史记录**，不能作为 2026-11-09 当前文件的重新测试结果：
 
 - 本轮玩法回归执行时可见 GDevelop 编辑器保持关闭；测试通过隐藏 CLI 运行，未使用 Computer Use。
 - `node scripts\build-base.cjs --check` 已通过：官方 libGD 5.6.286 成功校验 `TrainingRoom` 与 `RescueBase`，确认 22 名敌人、32 枚地图金币、6 道门、4 个商店、3 个试炼浮标、1 个中继核心、8400 像素背景及原生序列化往返。
