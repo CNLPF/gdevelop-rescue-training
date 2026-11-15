@@ -25,7 +25,7 @@
     "author": "AI数字创造实验室",
     "windowWidth": 960,
     "windowHeight": 640,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "D:\\AI_Project\\Ggame_安卓",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -3976,6 +3976,21 @@
       "objectsGroups": [],
       "variables": [
         {
+          "name": "ReinforcementTimerBySection",
+          "type": "structure",
+          "children": []
+        },
+        {
+          "name": "ReinforcementDefeatedBySection",
+          "type": "structure",
+          "children": []
+        },
+        {
+          "name": "ReinforcementGeneratedBySection",
+          "type": "structure",
+          "children": []
+        },
+        {
           "name": "GameMode",
           "persistentUuid": "630b995c-b987-4069-b5a4-0c1c58f085fd",
           "type": "string",
@@ -4175,156 +4190,187 @@
         },
         {
           "name": "CurrentWeapon",
+          "persistentUuid": "3330c5e6-0d7e-4389-a043-464485cf1e9e",
           "type": "string",
           "value": "Energy"
         },
         {
           "name": "HasMissile",
+          "persistentUuid": "b0cb63b8-85b0-4c3b-bc98-3aafe0012ae5",
           "type": "boolean",
           "value": false
         },
         {
           "name": "MissileUpgraded",
+          "persistentUuid": "5787826d-88da-4023-bcfe-94954a575f16",
           "type": "boolean",
           "value": false
         },
         {
           "name": "Charge",
+          "persistentUuid": "613a0215-6f81-4a23-a3ac-b2ef26d70563",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileLockProgress",
+          "persistentUuid": "2994f6df-3dcc-4095-8d96-9ea8456ce166",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileTargetId",
+          "persistentUuid": "738bdeac-ca9d-4ff9-9b8a-c35de8a90d94",
           "type": "string",
           "value": ""
         },
         {
           "name": "EnergyShots",
+          "persistentUuid": "998c112b-703f-45f5-be05-73e1cdc715a0",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileShots",
+          "persistentUuid": "b2158e64-295b-4acc-8d13-67d50c7d6042",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileLockedShots",
+          "persistentUuid": "17d13f3e-fc51-481d-bf4f-680d51d557ca",
           "type": "number",
           "value": 0
         },
         {
           "name": "EnergyHits",
+          "persistentUuid": "40b8241c-34d7-4982-a300-12bfc8775e59",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileHits",
+          "persistentUuid": "2194a863-2fda-4f2a-8fd0-00853d405052",
           "type": "number",
           "value": 0
         },
         {
           "name": "ScoutDroneDefeated",
+          "persistentUuid": "6a53171c-78ff-45a8-80f8-52dc01c9cbf3",
           "type": "number",
           "value": 0
         },
         {
           "name": "ArmoredDroneDefeated",
+          "persistentUuid": "f99a00ac-27da-4952-9dda-6803e0213304",
           "type": "number",
           "value": 0
         },
         {
           "name": "TrialTargetsDefeated",
+          "persistentUuid": "6e9017bf-61d8-4ca1-b4c6-90bb953b4a88",
           "type": "number",
           "value": 0
         },
         {
           "name": "TrialCoinsEarned",
+          "persistentUuid": "739a53a0-4d7f-40db-938a-fb96608a9f02",
           "type": "number",
           "value": 0
         },
         {
           "name": "TrialRound",
+          "persistentUuid": "3683c295-65d3-4a35-a8ad-096652e47d41",
           "type": "number",
           "value": 0
         },
         {
           "name": "ScoutDroneAttacks",
+          "persistentUuid": "2fe4ae3b-9ff0-4976-b1ec-5fe7adda358e",
           "type": "number",
           "value": 0
         },
         {
           "name": "ArmoredDroneAttacks",
+          "persistentUuid": "e2d9c7f7-6350-4d6e-8d8b-26504da3e83a",
           "type": "number",
           "value": 0
         },
         {
           "name": "EnemyShots",
+          "persistentUuid": "0b82ddcf-a784-4b17-8614-8708fc8a2159",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileBought",
+          "persistentUuid": "d55e3c73-1637-47f3-a11f-d90c05758701",
           "type": "number",
           "value": 0
         },
         {
           "name": "TrialPaid",
+          "persistentUuid": "20a9e863-0d0f-4b43-949c-90bba5d55683",
           "type": "structure",
           "children": []
         },
         {
           "name": "PatrolAttacks",
+          "persistentUuid": "f7e514c5-359d-43c7-90c2-e39b56d6d7fe",
           "type": "number",
           "value": 0
         },
         {
           "name": "ReinforcementsEnabled",
+          "persistentUuid": "f1c0cb7c-e5f4-4b07-8012-16b06e9455fe",
           "type": "boolean",
           "value": true
         },
         {
           "name": "ReinforcementTimer",
+          "persistentUuid": "6704e951-26f5-48d6-810f-d631d071e888",
           "type": "number",
           "value": 5
         },
         {
           "name": "ReinforcementSequence",
+          "persistentUuid": "6213a085-8333-4f47-9766-77e31fa0ec66",
           "type": "number",
           "value": 0
         },
         {
           "name": "ReinforcementSeed",
+          "persistentUuid": "d325d266-63e2-4428-a585-ddef507af258",
           "type": "number",
           "value": 0
         },
         {
           "name": "ReinforcementsSpawned",
+          "persistentUuid": "def97777-d303-4781-b79b-ab283ed4915b",
           "type": "number",
           "value": 0
         },
         {
           "name": "ReinforcementsDefeated",
+          "persistentUuid": "a3059fd5-0546-4690-832f-274601757965",
           "type": "number",
           "value": 0
         },
         {
           "name": "ShieldAttacks",
+          "persistentUuid": "f9bb108b-3ff4-4a9c-8afe-96af332acd8f",
           "type": "number",
           "value": 0
         },
         {
           "name": "TurretAttacks",
+          "persistentUuid": "2c952540-ed56-4f8d-88af-677628299ed7",
           "type": "number",
           "value": 0
         },
         {
           "name": "ShieldBlocks",
+          "persistentUuid": "55e9ecb5-66b6-415b-8513-b0f79e9a1211",
           "type": "number",
           "value": 0
         }
@@ -6097,6 +6143,16 @@
           "updateIfNotVisible": true,
           "variables": [
             {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
+            {
               "name": "Id",
               "type": "string",
               "value": ""
@@ -6273,6 +6329,16 @@
           "type": "Sprite",
           "updateIfNotVisible": true,
           "variables": [
+            {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
             {
               "name": "Id",
               "type": "string",
@@ -7710,6 +7776,16 @@
           "updateIfNotVisible": true,
           "variables": [
             {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
+            {
               "name": "Id",
               "type": "string",
               "value": ""
@@ -7929,6 +8005,16 @@
           "updateIfNotVisible": true,
           "variables": [
             {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
+            {
               "name": "Id",
               "type": "string",
               "value": ""
@@ -8105,6 +8191,16 @@
           "type": "Sprite",
           "updateIfNotVisible": true,
           "variables": [
+            {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
             {
               "name": "Id",
               "type": "string",
@@ -10784,6 +10880,21 @@
       "objectsGroups": [],
       "variables": [
         {
+          "name": "ReinforcementTimerBySection",
+          "type": "structure",
+          "children": []
+        },
+        {
+          "name": "ReinforcementDefeatedBySection",
+          "type": "structure",
+          "children": []
+        },
+        {
+          "name": "ReinforcementGeneratedBySection",
+          "type": "structure",
+          "children": []
+        },
+        {
           "name": "GameMode",
           "persistentUuid": "630b995c-b987-4069-b5a4-0c1c58f085fd",
           "type": "string",
@@ -10935,256 +11046,307 @@
         },
         {
           "name": "CurrentWeapon",
+          "persistentUuid": "3f4840f3-6a4c-418b-9a12-b06d5ffced94",
           "type": "string",
           "value": "Energy"
         },
         {
           "name": "HasMissile",
+          "persistentUuid": "0b9d4815-eacb-4cd6-98d4-b9a3602390a9",
           "type": "boolean",
           "value": false
         },
         {
           "name": "MissileUpgraded",
+          "persistentUuid": "90785f2c-9455-4f05-bac1-023ff7c93702",
           "type": "boolean",
           "value": false
         },
         {
           "name": "Charge",
+          "persistentUuid": "b4594ae3-cc8f-4d10-acbd-ac537e8c910a",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileLockProgress",
+          "persistentUuid": "31bb2db7-8d9d-42d0-95e0-a621a440df43",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileTargetId",
+          "persistentUuid": "f73454eb-809e-41fd-91c5-ac0538b6a4de",
           "type": "string",
           "value": ""
         },
         {
           "name": "EnergyShots",
+          "persistentUuid": "cea112d8-24c1-49fa-88eb-e11d7d557de8",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileShots",
+          "persistentUuid": "fdb17964-5894-4d7e-9f8d-ec6c2aaa00dc",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileLockedShots",
+          "persistentUuid": "38192505-3158-4338-ac84-ad8dc20bce4d",
           "type": "number",
           "value": 0
         },
         {
           "name": "EnergyHits",
+          "persistentUuid": "943b184a-5524-4edc-b4fb-8ebf44a47cb2",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileHits",
+          "persistentUuid": "0ddaf4f1-41b0-4435-90bb-bff65396fa95",
           "type": "number",
           "value": 0
         },
         {
           "name": "ScoutDroneDefeated",
+          "persistentUuid": "182ecc19-00dd-493e-bcce-711fa9c150e1",
           "type": "number",
           "value": 0
         },
         {
           "name": "ArmoredDroneDefeated",
+          "persistentUuid": "d21c4440-bd62-469c-b723-c52ca1746595",
           "type": "number",
           "value": 0
         },
         {
           "name": "TrialTargetsDefeated",
+          "persistentUuid": "f66f3939-0b12-43a9-833c-2162db00b83d",
           "type": "number",
           "value": 0
         },
         {
           "name": "TrialCoinsEarned",
+          "persistentUuid": "b85d47ce-2085-4f69-bf38-cec3a67a7ca6",
           "type": "number",
           "value": 0
         },
         {
           "name": "TrialRound",
+          "persistentUuid": "94da80dd-06df-43fc-ad20-bdcc0640e09b",
           "type": "number",
           "value": 0
         },
         {
           "name": "ScoutDroneAttacks",
+          "persistentUuid": "208a2315-054a-4bf5-8fc2-2df7ab8fc0b4",
           "type": "number",
           "value": 0
         },
         {
           "name": "ArmoredDroneAttacks",
+          "persistentUuid": "1d7269fa-62b0-476f-807a-28b2e0e52a00",
           "type": "number",
           "value": 0
         },
         {
           "name": "EnemyShots",
+          "persistentUuid": "60ee3246-6246-460c-bbcd-7727011545c8",
           "type": "number",
           "value": 0
         },
         {
           "name": "MissileBought",
+          "persistentUuid": "806d7371-2111-455c-a28a-2f3ada760ae8",
           "type": "number",
           "value": 0
         },
         {
           "name": "TrialPaid",
+          "persistentUuid": "7a74e19c-4e33-456f-a26d-fdbc545e4d5a",
           "type": "structure",
           "children": []
         },
         {
           "name": "PatrolAttacks",
+          "persistentUuid": "0c6ed320-5bdf-4c95-a1d2-d255319ca8b4",
           "type": "number",
           "value": 0
         },
         {
           "name": "ReinforcementsEnabled",
+          "persistentUuid": "d3f0c8fd-cc9c-4b28-a2fb-c1e354a5a76e",
           "type": "boolean",
           "value": true
         },
         {
           "name": "ReinforcementTimer",
+          "persistentUuid": "526b947a-763c-4700-bf59-839d0a88927c",
           "type": "number",
           "value": 6
         },
         {
           "name": "ReinforcementSequence",
+          "persistentUuid": "05d9cfc7-34ee-4aeb-833a-ee8269662beb",
           "type": "number",
           "value": 0
         },
         {
           "name": "ReinforcementSeed",
+          "persistentUuid": "30aa7392-5dfc-44c4-b5dc-2a277a211bde",
           "type": "number",
           "value": 0
         },
         {
           "name": "ReinforcementsSpawned",
+          "persistentUuid": "6dfb06d5-2075-461b-82f5-b7cc0290aacd",
           "type": "number",
           "value": 0
         },
         {
           "name": "ReinforcementsDefeated",
+          "persistentUuid": "875c85e2-a448-423c-a520-89a17632677d",
           "type": "number",
           "value": 0
         },
         {
           "name": "HasCannon",
+          "persistentUuid": "ab1fb652-e3cd-4a8d-bad4-311cd2902b8f",
           "type": "boolean",
           "value": false
         },
         {
           "name": "EnergyUpgraded",
+          "persistentUuid": "ff1f178e-9f55-4b47-bd87-f1de2f9ca5a1",
           "type": "boolean",
           "value": false
         },
         {
           "name": "CannonUpgraded",
+          "persistentUuid": "a0679c74-e358-4c95-bb4f-c798133bd59b",
           "type": "boolean",
           "value": false
         },
         {
           "name": "WalletAtStart",
+          "persistentUuid": "bc0a73cc-cd95-4a9a-9e89-5899605448e2",
           "type": "number",
           "value": 0
         },
         {
           "name": "CoinsSpent",
+          "persistentUuid": "a8d9d265-dd43-4fd6-ad2d-eba89ef63a2e",
           "type": "number",
           "value": 0
         },
         {
           "name": "CannonShots",
+          "persistentUuid": "400ce603-dcac-4807-bd72-7f66b8000826",
           "type": "number",
           "value": 0
         },
         {
           "name": "ChargedShots",
+          "persistentUuid": "4da21e17-2abc-4024-a33e-2a64e1b9ab0d",
           "type": "number",
           "value": 0
         },
         {
           "name": "CannonHits",
+          "persistentUuid": "1fc1d7d3-b397-4a13-9740-3e3f944ea56a",
           "type": "number",
           "value": 0
         },
         {
           "name": "ShieldBlocks",
+          "persistentUuid": "d259e877-a4a5-4417-b2cc-bcd7dd40a266",
           "type": "number",
           "value": 0
         },
         {
           "name": "JammerBlocks",
+          "persistentUuid": "54061c01-5255-49cf-9a8c-a9296069d496",
           "type": "number",
           "value": 0
         },
         {
           "name": "PatrolDefeated",
+          "persistentUuid": "f667415c-d541-47cd-a32f-d74fcb50e42f",
           "type": "number",
           "value": 0
         },
         {
           "name": "TurretDefeated",
+          "persistentUuid": "29467545-d0aa-4f56-8a57-b9d6a8d2d457",
           "type": "number",
           "value": 0
         },
         {
           "name": "ShieldDefeated",
+          "persistentUuid": "afd12ecc-adde-42d4-8f86-ddd5d58cf0b4",
           "type": "number",
           "value": 0
         },
         {
           "name": "JammerCoresDefeated",
+          "persistentUuid": "9b62b542-f3c8-4894-912d-d53508837707",
           "type": "number",
           "value": 0
         },
         {
           "name": "HealsBought",
+          "persistentUuid": "77ff4682-c122-4c18-b092-c354270560be",
           "type": "number",
           "value": 0
         },
         {
           "name": "UpgradesBought",
+          "persistentUuid": "5a2931ed-a927-454d-9568-9182574637dc",
           "type": "number",
           "value": 0
         },
         {
           "name": "Teleports",
+          "persistentUuid": "008eb61c-5b66-423a-90fb-735c5eaa3ebf",
           "type": "number",
           "value": 0
         },
         {
           "name": "ElapsedSeconds",
+          "persistentUuid": "9166eea5-e122-4427-b6b9-1fb697f960e4",
           "type": "number",
           "value": 0
         },
         {
           "name": "ShieldAttacks",
+          "persistentUuid": "60cb6349-5682-463a-b243-c40012b0281a",
           "type": "number",
           "value": 0
         },
         {
           "name": "TurretAttacks",
+          "persistentUuid": "b9829f59-b3a2-4a68-a240-8d21c0d911eb",
           "type": "number",
           "value": 0
         },
         {
           "name": "JammerCoreDefeated",
+          "persistentUuid": "00b3e686-ef70-4166-b441-b2d0456a88cd",
           "type": "boolean",
           "value": false
         },
         {
           "name": "UnlockedPortals",
+          "persistentUuid": "a0a02758-f4de-4b6f-9d53-1db63f6bfe8c",
           "type": "structure",
           "children": []
         },
         {
           "name": "ShopStock",
+          "persistentUuid": "cdf5fbcf-fe07-4642-8d8c-526b20b833c2",
           "type": "structure",
           "children": []
         }
@@ -11845,111 +12007,6 @@
           "width": 490,
           "x": 7910,
           "y": 560,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 90,
-          "layer": "Gameplay",
-          "name": "Wall",
-          "persistentUuid": "4ced1735-d519-453f-a4a2-6e39d9df0eea",
-          "width": 40,
-          "x": 1560,
-          "y": 470,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 90,
-          "layer": "Gameplay",
-          "name": "Wall",
-          "persistentUuid": "331f42b1-6804-401b-8820-de11bfd037f2",
-          "width": 40,
-          "x": 1860,
-          "y": 470,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 90,
-          "layer": "Gameplay",
-          "name": "Wall",
-          "persistentUuid": "4b9d9627-958b-4903-89d7-53992c189234",
-          "width": 40,
-          "x": 3470,
-          "y": 470,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 90,
-          "layer": "Gameplay",
-          "name": "Wall",
-          "persistentUuid": "ec469d2f-a3ca-44d0-aa61-f852b15a478c",
-          "width": 40,
-          "x": 4670,
-          "y": 470,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 90,
-          "layer": "Gameplay",
-          "name": "Wall",
-          "persistentUuid": "2174258f-d60e-4a99-bef6-d55ba9e2bf68",
-          "width": 40,
-          "x": 4890,
-          "y": 470,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 90,
-          "layer": "Gameplay",
-          "name": "Wall",
-          "persistentUuid": "03be07e6-398e-4082-b397-fb346fd153a7",
-          "width": 40,
-          "x": 5420,
-          "y": 470,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 60,
-          "layer": "Gameplay",
-          "name": "Wall",
-          "persistentUuid": "716c4c35-f140-4654-bb22-dc8018452e62",
-          "width": 40,
-          "x": 7280,
-          "y": 500,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -16401,6 +16458,7 @@
           "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "Backdrop",
+          "persistentUuid": "2df70150-b1a2-47d7-b134-cdbd6c2ac8af",
           "type": "Sprite",
           "updateIfNotVisible": true,
           "variables": [],
@@ -16568,54 +16626,6 @@
         {
           "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
-          "name": "Wall",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Solid",
-              "type": "PlatformBehavior::PlatformBehavior",
-              "platformType": "NormalPlatform",
-              "canBeGrabbed": false
-            }
-          ],
-          "animations": [
-            {
-              "name": "Idle",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": true,
-                  "timeBetweenFrames": 0.1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "wall.svg",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origin",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "center",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": false,
-          "assetStoreId": "",
           "name": "Gate",
           "type": "Sprite",
           "updateIfNotVisible": true,
@@ -16675,6 +16685,16 @@
           "type": "Sprite",
           "updateIfNotVisible": true,
           "variables": [
+            {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
             {
               "name": "Id",
               "type": "string",
@@ -16852,6 +16872,16 @@
           "type": "Sprite",
           "updateIfNotVisible": true,
           "variables": [
+            {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
             {
               "name": "Id",
               "type": "string",
@@ -18303,6 +18333,16 @@
           "updateIfNotVisible": true,
           "variables": [
             {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
+            {
               "name": "Id",
               "type": "string",
               "value": ""
@@ -18648,6 +18688,16 @@
           "updateIfNotVisible": true,
           "variables": [
             {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
+            {
               "name": "Id",
               "type": "string",
               "value": ""
@@ -18824,6 +18874,16 @@
           "type": "Sprite",
           "updateIfNotVisible": true,
           "variables": [
+            {
+              "name": "SectionId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "SectionKey",
+              "type": "string",
+              "value": ""
+            },
             {
               "name": "Id",
               "type": "string",
@@ -19326,9 +19386,6 @@
           },
           {
             "objectName": "Terrain"
-          },
-          {
-            "objectName": "Wall"
           },
           {
             "objectName": "Gate"
