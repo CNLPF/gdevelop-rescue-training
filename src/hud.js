@@ -42,7 +42,7 @@ export function attachHud(r){
     r.text('StageStatus','');r.object('StageStatus')?.hide();
     const bar=r.object('ChargeFill');if(bar){bar.hide(!((cannon||missile)&&charging));bar.setColor(missile?'255;174;76':'181;150;255');bar.setWidth(Math.max(2,32*Math.max(0,Math.min(1,meter))));bar.setPosition(chargeX,chargeY);}
     r.text('GoalText',teaching?lesson:'');const goal=r.object('GoalText');if(goal)goal.hide(!teaching);
-    const help=r.object('KeyHelp');if(help)help.hide(!teaching);
+    const help=r.object('KeyHelp');if(help)help.hide(!teaching||r.touchControlsEnabled);
     const prompt=r.object('PromptText');if(prompt)prompt.hide(true);
   };
 }

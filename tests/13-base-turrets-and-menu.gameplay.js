@@ -54,9 +54,9 @@ harness.assert(v('EnemyShots')===shotsBeforeTempo+2,'faster tempo still fires ex
 harness.assert(Math.abs(fastCooldown-2.2*0.8)<0.05,'tempo 0.8 shortens the next turret cycle');
 harness.assert(fastCooldown<normalCooldown,'higher pressure tempo advances attacks sooner');
 // A swept projectile must not cross a thin wall, even when its next step crosses it.
-const shot=harness.spawn('Bullet',1848,500,undefined,'Gameplay');
+const shot=harness.spawn('Bullet',1480,365,undefined,'Gameplay');
 for(const [k,x]of Object.entries({Vx:720,Vy:0,Damage:1,Range:600}))harness.setObjectVariable(shot.id,k,x);
-await harness.stepFrames(2);harness.assert(!harness.getObjects('Bullet').some(o=>o.id===shot.id),'bullet is consumed on wall impact');
+await harness.stepFrames(2);harness.assert(!harness.getObjects('Bullet').some(o=>o.id===shot.id),'bullet is consumed on terrain impact');
 const ranged=harness.spawn('Bullet',100,200,undefined,'Gameplay');
 for(const [k,x]of Object.entries({Vx:720,Vy:0,Range:600}))harness.setObjectVariable(ranged.id,k,x);
 await harness.stepFrames(51);harness.assert(!harness.getObjects('Bullet').some(o=>o.id===ranged.id),'unobstructed bullet expires at range');

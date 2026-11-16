@@ -29,6 +29,8 @@ let browser;
   assert.equal(state.loaded,true);assert.equal(state.mode,'Playing');
   assert.ok(['Entry','Jump'].includes(state.stage),`unexpected initial stage: ${state.stage}`);
   await page.screenshot({path:path.join(evidence,'browser-start.png')});
+  console.log(JSON.stringify({state,errors,blockedExternal}));
+  const canvas=page.locator('canvas').first();if(await canvas.count())await canvas.click({position:{x:480,y:320}});
   await page.keyboard.down('ArrowRight');await page.waitForTimeout(250);await page.keyboard.up('ArrowRight');await page.waitForTimeout(100);
   const moved=await page.evaluate(()=>window.__rescueGame.getSceneStack().getCurrentScene().getObjects('Player')[0].getX());
   assert.ok(moved>state.player[0].x+20,'real browser keyboard moves the native player');

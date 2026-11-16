@@ -24,6 +24,53 @@
 
 如果 Windows 找不到 GDevelop，请在启动脚本中确认 5.6.286 的可执行文件路径，或直接用该版本编辑器打开 `game.json`。打开项目与运行离线游戏不需要登录。
 
+## 手机横屏与离线 Web
+
+横屏触控层已覆盖 `TrainingRoom` 与 `RescueBase`，键盘操作继续可用。参考分辨率为 `960×640`，项目与 Cordova 配置均锁定横屏；竖屏时显示旋转提示并暂停玩法，不提供另一套竖屏布局。
+
+触屏设备会自动显示控件，桌面默认隐藏。课堂排障时可修改场景变量 `TouchControlsMode`：
+
+| 值 | 行为 |
+|---|---|
+| `auto` | 有触摸能力时显示，桌面隐藏 |
+| `on` | 强制显示，适合桌面触控测试 |
+| `off` | 强制隐藏，仅保留键盘 |
+
+触控按钮使用以下映射：
+
+| 触控按钮 | 游戏中动作 |
+|---|---|
+| 左 / 右 | 持续移动与转身，可与其他手指同时按住 |
+| 跳跃 | 按下边沿触发；松开后再次按可二段跳 |
+| 攻击 | 按住连射或蓄力／锁定，松开后发射穿盾炮或导弹 |
+| 武器 | 对应 `Q`；菜单中变为“返回” |
+| 交互 | 对应 `E`；商店、传送门和重开确认中变为“确认” |
+| 重开 | 右上角打开新局确认 |
+
+已有移动端构建可直接启动本地服务器，供同一 Wi-Fi 下的手机访问：
+
+```powershell
+npm run serve:mobile
+```
+
+终端会打印 `http://127.0.0.1:8080` 和局域网地址；手机横屏打开局域网地址即可。`dist/mobile-web` 已随仓库提供，课堂运行不需要安装依赖。
+
+运行浏览器自动化检查时，先安装锁定的 Playwright 版本；脚本使用 Windows 自带的 Microsoft Edge：
+
+```powershell
+npm install
+npm run test:mobile-browser
+```
+
+只有需要从新的 GDevelop HTML5 预览重新生成发布包时，才运行 `npm run build:mobile`。
+
+构建脚本只消费 GDevelop 的 HTML5 导出文件，移除预览调试器、玩法测试运行器、source map、本机路径和分析 UUID；它不会读取或重建 `game.json` 中的场景实例。输出目录为：
+
+- `dist/mobile-web`：离线网页包。
+- `dist/android-cordova`：Cordova 兼容源与锁横屏配置。
+
+Cordova 源不等于已编译 APK。当前机器没有 Java、Gradle、Android SDK 和 ADB，因此只验证了源结构；APK 构建和真机安装需要具备完整 Android 工具链的机器执行。
+
 ## 版本管理
 
 本项目使用 Git 保存可回滚历史。正式 `game.json`、源码、测试、构建脚本和美术源文件进入提交；自动保存、预览项目、测试证据和临时候选文件不进入提交。变更与回滚流程见 [`docs/VERSION_CONTROL.md`](docs/VERSION_CONTROL.md)。
@@ -64,7 +111,7 @@ node .\scripts\inspect-game-json.cjs --scene=RescueBase --details
 | 层 | 复用内容 |
 |---|---|
 | 共享规则 | 武器参数、目标筛选与评分、20% 粘性切换、锁定和蓄力状态、统一伤害、奖励防重、金币交接及购买校验 |
-| 共享输入 | ←／→、空格、W、Q、E 与菜单按键状态；切枪、商店、掉坑和死亡时统一取消蓄力／锁定 |
+| 共享输入 | 键盘与触控统一映射为 left／right／jump／fire／switch／interact／confirm／cancel／restart；切枪、商店、掉坑和死亡时统一取消蓄力／锁定与触点所有权 |
 | 共享表现 | HUD 布局、武器图标、准星、充能条、资源映射和完成记录字段 |
 | 共享构建与测试 | `src/base/` 下的配置与规则、`src/art-v2.js`、`src/hud.js`、构建脚本、纯规则测试和 GDevelop 玩法测试入口 |
 | 场景专属 | 地图和平台碰撞、敌人实例与数量、门和商店位置、教学阶段、完成条件、完成卡文案、镜头边界和背景 |
@@ -165,9 +212,12 @@ node .\scripts\inspect-game-json.cjs --scene=RescueBase --details
 - `src/training-aerial.js`：在五阶段训练房中接入 V0.3 飞行敌人、导弹和试炼，
   不改变原有教学推进。
 - `src/shared/aiming.js`：两个场景共用的目标筛选、加权评分、粘性切换和射击方向解析。
+- `src/shared/touch-input.js`：共享触控布局、多指所有权、动作聚合、菜单情境映射和边沿状态。
+- `scripts/patch-mobile-touch.cjs`：只补共享触控对象、资源和事件，保留现有场景实例。
+- `scripts/build-mobile-dist.cjs`：从 GDevelop HTML5 导出运行时生成干净 Web／Cordova 包。
 - `src/art-v2.js`、`src/hud.js`：角色视觉代理与两场景共享 HUD；HUD 图标和
   文本使用同一组显式布局常量，避免实例缩放造成重叠。
-- `assets/`：本地 SVG／PNG、资源清单和高清角色资源。
+- `assets/`：本地 SVG／PNG、资源清单、高清角色资源和 `assets/touch/` 触控图标。
 - `art-source/`：用户提供的美术包、说明和提取来源记录。
 - `tests/*.test.js`：可由 Node 直接执行的纯规则测试。
 - `tests/*.gameplay.js`：需要在 GDevelop 游戏测试环境运行的真实玩法脚本。
@@ -210,25 +260,22 @@ node --test .\tests\rules.test.js .\tests\base-rules.test.js .\tests\architectur
 
 ## 当前验证状态
 
-截至 2026-11-09 的架构文档整理：
+截至 2026-11-16，当前 `game.json`、两个场景的触控版本和移动发布包已完成以下真实验证：
 
-- 本轮只读取了现有 `game.json`、源码和测试文件，补充了架构文档与只读检查器；没有启动 GDevelop，没有执行玩法测试，也没有修改地图实例。
-- 当前 `game.json` 元数据为 GDevelop `5.6.286`；实际编辑器版本应以打开项目时显示为准。
-- 当前 `RescueBase` 包含 139 个实例、46 个场景对象定义、76 个场景变量和 8 个事件组；`TrainingRoom` 包含 54 个实例、43 个场景对象定义、64 个场景变量和 8 个事件组。
+- `node --test`：**60 项通过，0 项失败**。覆盖触控布局、触点边界、多指聚合、按住与边沿、菜单情境映射、项目资源完整性、两个场景地图实例哈希和发布包安全检查。
+- GDevelop 原生玩法测试：`21-mobile-touch` 在 `TrainingRoom` 与 `RescueBase` 实际通过，执行 520 帧。覆盖左右移动、长按攻击、松开停止、触控跳跃与二段跳、商店确认／返回、重开、掉坑及菜单打开后的触点清理。
+- 大型键盘回归：`12-base-walkthrough` 实际通过，执行 6977 帧；`13-base-turrets-and-menu`、`17-aerial-missile`、`19-auto-targeting` 也分别通过。
+- 移动发布包浏览器检查：桌面 `960×640` 保持键盘玩法并隐藏触控；手机横屏 `844×390` 显示 7 个触控按钮；真实多点接口完成“右移＋攻击＋跳跃”；竖屏显示旋转提示并暂停玩法，恢复横屏后继续。浏览器运行错误为 0，外部 HTTP 请求为 0。
+- 7 个触控按钮均不小于 60×60 参考像素，互不重叠并位于 `960×640` 画布安全区内。测试截图只保存在忽略提交的 `evidence/` 中。
+- 触控补丁前后，`TrainingRoom` 与 `RescueBase` 的既有地图实例哈希保持不变，没有恢复用户删除的 `Wall`，也没有运行会重建地图的 `build-base.cjs`。
+- `dist/mobile-web` 与 `dist/android-cordova` 已从同一 GDevelop HTML5 预览运行时生成。发布包移除了 `debugger-client`、`gameplay-tests`、source map、本机编译路径和分析 UUID；Cordova 源锁定横屏且只加载本地 `www`。
 
-以下是 2026-11-08 敌人 AI 改造阶段的**历史记录**，不能作为 2026-11-09 当前文件的重新测试结果：
+当前边界：
 
-- 本轮玩法回归执行时可见 GDevelop 编辑器保持关闭；测试通过隐藏 CLI 运行，未使用 Computer Use。
-- `node scripts\build-base.cjs --check` 已通过：官方 libGD 5.6.286 成功校验 `TrainingRoom` 与 `RescueBase`，确认 22 名敌人、32 枚地图金币、6 道门、4 个商店、3 个试炼浮标、1 个中继核心、8400 像素背景及原生序列化往返。
-- `TrainingRoom` 已同步包含 1 架侦察无人机、1 架装甲无人机、3 个导弹试炼浮标和 1 个导弹领取箱；两个场景的 HUD 图标和文字使用相同布局。
-- 本轮候选文件为 `game.v05-enemy-ai-preview.json`；在确认编辑器关闭后，正式 `game.json` 已由同一源码重新生成并通过原生序列化往返校验。覆盖前保留了带时间戳的 `game.json` 与 `game.json.autosave` 备份。
-- 两个场景均已接入受限随机增援；`RescueBase` 只在 Corridor、Shield、Energy 和 Aerial 战斗区生成，`TrainingRoom` 只在 Combat 阶段生成。五类敌人都可被随机选中，场上最多保留 3 名动态增援。动态增援单独计入 `ReinforcementsSpawned`、`ReinforcementsDefeated`，不会伪造固定敌人或金币探索记录。
-- 五种敌人均通过同一 AI 管线靠近并攻击；巡逻机器人、移动炮台和护盾守卫会主动缩短距离，两类无人机会同时调整水平和垂直位置。战斗路径不再创建 `AimLine`、`TurretWarning` 或 `BombMarker`。
-- 已撤销 `↑／↓ + W` 手动垂直瞄准，两个场景继续使用统一自动锁敌；本轮纯规则、架构、HUD 与资源测试共 39 项，全部通过。
-- 完整通关脚本覆盖 22 名敌人、强制 20 金币导弹购买、7 名飞行敌人、中继核心与 8240 出口；`17-aerial-missile.gameplay.js` 覆盖导弹购买边界、锁定、追踪、目标死亡、撞墙、单次奖励、中继核心和零余额补给试炼。
-- 既有 `12-base-walkthrough.gameplay.js`、`13-base-turrets-and-menu.gameplay.js` 和 `19-auto-targeting.gameplay.js` 分别覆盖完整键盘通关、画面边界与攻击清理、三把武器共享目标选择等回归场景；本轮重新执行专项测试时遇到 GDevelop 嵌入预览启动超时，因此不把本轮未完成的复跑标记为通过。
-- `20-reinforcements-and-enemy-attacks.gameplay.js` 覆盖五类敌人的随机生成、追击与射击、无引导线、三敌人上限、安全生成区、暂停冻结、训练房 Combat 阶段限制、飞机离屏取消攻击及随机增援奖励防刷。本轮专项测试曾真实通过一次；后续复跑遇到测试内嵌预览未及时启动的基础设施超时，不能据此声明每次复跑均通过。
-
+- Android/Cordova 源已生成，但 **APK 未编译**、未安装到真机。
+- 尚未在实体手机上验证刘海／圆角安全区、触控延迟和多指硬件差异。
+- 尚未验证应用切到后台后恢复、浏览器地址栏变化和不同厂商 WebView。
+- Headless 手机模拟通过不能替代目标设备真机体验测试。
 ## 美术说明
 
 用户提供的主角、巡逻机器人、炮台、护盾守卫和 V2 空中敌机 SVG 已接入；背景与平台仍按碰撞布局保留项目本地表现。
@@ -245,4 +292,3 @@ node --test .\tests\rules.test.js .\tests\base-rules.test.js .\tests\architectur
 - 背景、平台贴图、导弹与中继核心仍是本地占位，不是最终一比一视觉稿。
 - 尚未验证其他 GDevelop 版本、平板触控、手柄、安装包或跨关闭存档。
 - 暂不包含 Boss、音频、多人、付费内容、账号和云存档。
-

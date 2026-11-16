@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.aichildlearning.rescuetraining" version="0.3.0" android-versionCode="300">
+  <name>机甲伙伴：救援基地</name>
+  <description>离线横屏机甲救援平台游戏</description>
+  <author email="local@example.invalid" href="https://github.com/CNLPF/gdevelop-rescue-training">AI数字创造实验室</author>
+  <content src="index.html" />
+
+  <preference name="Orientation" value="landscape" />
+  <preference name="Fullscreen" value="true" />
+  <preference name="StatusBarOverlaysWebView" value="true" />
+  <preference name="StatusBarBackgroundColor" value="#081322" />
+  <preference name="StatusBarStyle" value="black-translucent" />
+  <preference name="AndroidXEnabled" value="true" />
+  <preference name="SplashMaintainAspectRatio" value="true" />
+
+  <!-- The game only loads files bundled in www; no remote origin is allowed. -->
+  <access origin="none" />
+  <allow-navigation href="none" />
+</widget>

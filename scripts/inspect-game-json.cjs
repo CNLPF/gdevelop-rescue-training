@@ -161,7 +161,11 @@ function instanceSummaries(layout, specs) {
 
 function inspectScene(project, layout, specs) {
   const availableObjects = sceneObjectNames(layout, project);
-  const missingCoreObjects = CORE_OBJECTS.filter((name) => !availableObjects.has(name));
+  // Some authored rooms intentionally use only Terrain and Gate for collision.
+  // Wall remains discoverable through objectNames but is not a required object.
+  const missingCoreObjects = CORE_OBJECTS.filter(
+    (name) => name !== "Wall" && !availableObjects.has(name),
+  );
   const sceneVariables = variablesOf(layout, "variables");
   const missingCoreVariables = CORE_SCENE_VARIABLES.filter((name) => !sceneVariables.has(name));
   const instances = instanceSummaries(layout, specs);

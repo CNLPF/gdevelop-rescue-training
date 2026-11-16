@@ -1,0 +1,17 @@
+{
+  "project": "机甲伙伴：救援基地",
+  "version": "0.3.0",
+  "gdevelopVersion": "5.6.286",
+  "source": "GDevelop HTML5 preview export",
+  "releaseTransform": "Removed preview debugger, gameplay-test runner, source maps, local paths and analytics UUID",
+  "orientation": "landscape",
+  "referenceResolution": {
+    "width": 960,
+    "height": 640
+  },
+  "offline": true,
+  "debugScriptsIncluded": false,
+  "gdevelopScriptFileCount": 78,
+  "androidApkCompiled": false,
+  "physicalDeviceVerified": false
+}

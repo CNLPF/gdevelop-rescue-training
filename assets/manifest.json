@@ -292,6 +292,56 @@
       "file": "base-platform-40x60.svg",
       "source": "project-authored local placeholder",
       "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-attack.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-back.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-confirm.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-interact.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-jump.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-left.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-restart.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-right.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-rotate-overlay.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
+    },
+    {
+      "file": "touch-weapon.svg",
+      "source": "project-authored touch interface",
+      "license": "Original local vector artwork"
     }
   ]
 }

@@ -192,7 +192,7 @@ async function main() {
 
   const read = name => fs.readFileSync(path.join(root, 'src', `${name}.js`), 'utf8').replace(/^export /gm, '');
   const shared = [
-    'shared/aiming', 'shared/weapon-input', 'shared/enemy-ai', 'rules', 'input', 'combat',
+    'shared/touch-input', 'shared/aiming', 'shared/weapon-input', 'shared/enemy-ai', 'rules', 'input', 'combat',
     'world', 'hud', 'presentation', 'art-v2', 'core',
   ].map(read).join('\n');
   const trainingAerialModules = ['base/config', 'training-aerial'].map(read).join('\n');

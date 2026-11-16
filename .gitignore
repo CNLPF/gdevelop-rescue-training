@@ -1,20 +1,20 @@
-# Dependencies and build output
+# Dependencies
 node_modules/
-dist/
 coverage/
 test-results/
 playwright-report/
 *.tsbuildinfo
-*.local
-.local/
 
-# GDevelop local autosaves and generated preview projects
-game.json.autosave
-game.json.autosave.*
+# GDevelop local autosaves, backups and generated preview projects
+backups/
+*.autosave
+*.autosave.*
 game.before-*.json
 game.v*.json
 game.*-preview.json
 game.*-debug.json
+*.local
+.local/
 
 # Generated gameplay evidence and screenshots
 evidence/
@@ -23,9 +23,15 @@ gameplay-test-screenshots/
 gameplay-test-results.json
 GDTMP-*/
 
+# Keep only the release-ready mobile deliveries.
+dist/*
+!dist/mobile-web/
+!dist/mobile-web/**
+!dist/android-cordova/
+!dist/android-cordova/**
+
 # Logs and editor/OS files
 *.log
 .DS_Store
 Thumbs.db
 desktop.ini
-

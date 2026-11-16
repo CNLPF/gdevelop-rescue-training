@@ -1,0 +1,17 @@
+{
+  "name": "jiahuoban-rescue-base",
+  "displayName": "机甲伙伴：救援基地",
+  "version": "0.3.0",
+  "description": "离线横屏 Cordova 源；APK 尚未编译验证。",
+  "private": true,
+  "scripts": {
+    "prepare": "echo Cordova source is ready. Add the Android platform with your installed Cordova CLI."
+  },
+  "cordova": {
+    "platforms": []
+  },
+  "devDependencies": {
+    "cordova": "^12.0.0",
+    "cordova-android": "^13.0.0"
+  }
+}

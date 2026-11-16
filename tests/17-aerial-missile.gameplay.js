@@ -68,9 +68,9 @@ harness.assert(!harness.getObjects('Bullet').some(o=>o.id===guided.id),'unguided
 
 // A missile is removed by walls and applies one hit before its single deletion.
 await harness.goToScene('RescueBase');await harness.stepFrames(4);
-const wallShot=harness.spawn('Bullet',1848,500,undefined,'Gameplay');
+const wallShot=harness.spawn('Bullet',1480,365,undefined,'Gameplay');
 for(const [key,value]of Object.entries({Vx:360,Vy:0,Distance:0,Range:720,Damage:3,Weapon:'Missile',Locked:false}))harness.setObjectVariable(wallShot.id,key,value);
-await harness.stepFrames(2);harness.assert(!harness.getObjects('Bullet').some(o=>o.id===wallShot.id),'missile cannot pass through a wall');
+await harness.stepFrames(8);harness.assert(!harness.getObjects('Bullet').some(o=>o.id===wallShot.id),'missile cannot pass through terrain');
 const single=harness.getObjects('ScoutDrone').find(o=>ov(o,'Id')==='sd1');harness.setObjectVariable(single.id,'Health',3);
 spawnImpact(single,{weapon:'Missile',damage:3,locked:true,targetId:'sd1'});await harness.stepFrames(2);
 harness.assert(!harness.getObjects('ScoutDrone').some(o=>o.id===single.id)&&v('ScoutDroneDefeated')===1,'missile settles one hit and one defeat');

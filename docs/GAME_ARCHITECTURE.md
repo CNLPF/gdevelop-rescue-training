@@ -151,17 +151,26 @@ Entry → Corridor → Supply → Shield → Energy → Aerial → Rescue
 
 ### 4.1 输入职责
 
-| 按键 | 行为 |
-|---|---|
-| ← / → | 水平移动和转身 |
-| 空格 | 跳跃；松开后再次按下触发二段跳 |
-| W | 当前武器的主要操作 |
-| Q | 只在已拥有武器之间循环 |
-| E | 靠近商店、武器箱、训练靶、传送门或出口时交互 |
-| 方向键 / Enter / Esc | 菜单选择、确认和关闭 |
-| R / Enter / Esc | 重开确认、确认新局和取消 |
+| 键盘 | 触控按钮 | 统一动作 |
+|---|---|---|
+| ← / → | 左 / 右 | `left` / `right` |
+| 空格 | 跳跃 | `jump` |
+| W | 攻击 | `fire` |
+| Q | 武器 | `switch` |
+| E | 交互 | `interact` |
+| 方向键 / Enter | 交互键在菜单中变“确认” | `left` / `right` / `confirm` |
+| Esc | 武器键在菜单中变“返回” | `cancel` |
+| R / Enter / Esc | 重开与重开确认 | `restart` / `confirm` / `cancel` |
 
-输入模块把“本帧刚按下”与“持续按住”分开。`pressed` 是边沿事件，适合重开、切枪和一次性确认；持续按住只用于移动和部分武器输入。
+`src/shared/touch-input.js` 定义 960×640 参考坐标中的 `TOUCH_LAYOUT`，并把 GDevelop 原生触点所有权映射为同一组动作。每个触点从按下到抬起最多归属于一个按钮；离开命中区或收到结束事件后释放，不能滑入另一个按钮。多个触点可同时按住不同动作，同一动作由多根手指共同持有时，只有最后一根手指抬起才释放。
+
+输入适配器先合并键盘和触点，再计算状态：
+
+- `pressed`：本帧从未按到按下，用于跳跃、切枪、交互、确认和重开边沿；
+- `held`：持续按住，用于移动和攻击；
+- `released`：本帧从按下到抬起，用于穿盾炮和制导导弹的松开发射。
+
+菜单打开、场景切换、掉坑、死亡、竖屏和按钮切换时会清空触点所有权并封锁尚未抬起的触点，防止恢复后意外射击。`TouchControlsMode` 支持 `auto`、`on`、`off`；不可用的竖屏会隐藏横屏按钮并冻结 `Gameplay` 与 `Effects` 层。
 
 ### 4.2 角色物理
 
@@ -636,6 +645,8 @@ GDevelop 变量的优先级应这样理解：
 - `invulnerable`：受伤保护；
 - `fireCooldown`、`charging`、`charge`：武器节奏；
 - `facing`、`aimTargetId`、`missileTargetId`：瞄准；
+- `keyboard`：键盘原始状态；`touchState`：触点 `owners`、`blocked`、`down` 与当前活动标识；
+- `touchControlsEnabled`、`touchControlsVisible`、`orientationBlocked`：触控设备检测、显示状态和竖屏暂停；
 - `fireLocked`：菜单恢复后要求先松开 W；
 - `elapsed`：行动时间；
 - `activeShop`、`menuIndex`：当前菜单；
@@ -723,7 +734,8 @@ GDevelop 变量的优先级应这样理解：
 
 - 武器配置、伤害、射速、射程和升级价格；
 - 自动瞄准筛选、评分和粘性；
-- 输入边沿与武器状态机；
+- 键盘／触控动作聚合、输入边沿与武器状态机；
+- 触点所有权、按钮布局、菜单情境映射和粘性输入清理；
 - 统一伤害入口；
 - 奖励和购买账本；
 - 敌人 AI 的共同追击、距离和攻击条件；
@@ -773,12 +785,38 @@ node .\scripts\inspect-game-json.cjs --scene=RescueBase --details
 
 ## 15. 当前验证边界
 
-本文的变量、对象和事件说明基于当前仓库中的 `game.json` 与源码快照。文档本身不证明以下项目已通过本轮测试：
+截至 2026-11-16，移动触控层已在当前项目中实际验证：
 
-- 手工地图改动后的完整键盘通关；
-- 新增敌人数与区域门条件的一致性；
-- 掉坑坐标修改后的返回体验；
-- 随机增援站点在地图重排后的可达性与公平性；
-- GDevelop 预览和纯规则测试。
+- 键盘输入和 GDevelop 原生触点输入先聚合为 `left/right/jump/fire/switch/interact/confirm/cancel/restart`，再统一计算 `held/pressed/released`；触控没有创建第二套 DOM 事件系统。
+- `TrainingRoom` 与 `RescueBase` 都包含 7 个唯一按钮与 1 个横屏提示层；按钮来自共享 `TOUCH_LAYOUT`，不按场景复制坐标常量。
+- 多指操作可以同时保持移动、攻击和跳跃；一个触点只归属于按下时命中的按钮，离开后不会滑入其他按钮，多根手指按住同一动作时只有最后一把手指释放后才停止。
+- 菜单打开后会封锁开启菜单的手指，直到抬起；商店中交互／确认与武器／返回按情境重新映射。场景切换、掉坑、死亡和竖屏切换都会清理触点、蓄力与锁定。
+- 竖屏时 `Gameplay` 和 `Effects` 层暂停并显示旋转提示；恢复横屏后重新接受输入，不提供第二套竖屏 HUD。
 
-这些必须在实际地图保存后，按真实运行结果验证。
+实际执行记录：
+
+| 测试 | 结果 |
+|---|---|
+| `node --test` | 60 项通过，0 失败 |
+| `21-mobile-touch` | 通过，520 帧，覆盖两个场景 |
+| `12-base-walkthrough` | 通过，6977 帧 |
+| `13-base-turrets-and-menu` | 通过，358 帧 |
+| `17-aerial-missile` | 通过，275 帧 |
+| `19-auto-targeting` | 通过，173 帧 |
+| 移动发布包浏览器检查 | 桌面、手机横屏、多点触控、竖屏暂停与恢复均通过；运行错误 0，外部请求 0 |
+
+地图实例哈希仍为：
+
+- `TrainingRoom`：`774e68540fde11a136a8c46b1386e393bd4ec70b4a043ee4a10e456e4841d15e`
+- `RescueBase`：`71e1aeea916b33e52ca5f9674b7ac3df51ad92c938f6201aafc734655983269c`
+
+哈希不包含新增触控按钮和旋转提示层，用于证明补丁没有移动、删除或重建既有地图实例。
+
+`dist/mobile-web` 是可离线运行的发布包；`dist/android-cordova` 是可继续编译的 Cordova 源。当前环境没有 Java、Gradle、Android SDK 和 ADB，因此：
+
+- APK 未编译；
+- 未安装到实体 Android 设备；
+- 未验证刘海、圆角安全区、厂商 WebView、触控延迟和切后台恢复；
+- Headless 移动浏览器模拟不能替代真机验收。
+
+地图本身仍受第 12 节列出的旧配置耦合约束。触控补丁只增加共享对象、HUD 实例与事件，不改变门、平台、敌人、金币、商店或传送点坐标。

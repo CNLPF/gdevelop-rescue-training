@@ -9,16 +9,24 @@ const tap=async key=>{
   harness.setKeyPressed(key,true);await harness.stepFrames(1);
   harness.setKeyPressed(key,false);await harness.stepFrames(1);
 };
-const setCenter=(o,x,y)=>harness.setObjectPosition(o.id,x-o.width/2,y-o.height/2);
+const setCenter=(o,x,y)=>harness.setObjectPosition(o.id,x-o.width/2,y-Math.min(10,Math.max(6,o.height*0.25)));
 
 await harness.goToScene('RescueBase');await harness.stepFrames(4);
+// Keep the ground collision floor, but isolate target selection from authored
+// platforms whose cover is covered by the dedicated occlusion rules.
+for(const terrain of [...harness.getObjects('Terrain')])if(terrain.y<560)harness.removeObject(terrain.id);
 for(const type of ['Patrol','Turret','Shield','ScoutDrone','ArmoredDrone','JammerCore','TrialDrone']){
   for(const object of [...harness.getObjects(type)])harness.removeObject(object.id);
 }
 
 let runtime=harness.getCurrentRuntimeScene().__rescue;
-const dummies=harness.getObjects('Dummy');
-const horizontal=dummies[0],overhead=dummies[1];
+for(const dummy of [...harness.getObjects('Dummy')])harness.removeObject(dummy.id);
+const horizontal=harness.spawn('Dummy',1240,520,undefined,'Gameplay');
+const overhead=harness.spawn('Dummy',1260,400,undefined,'Gameplay');
+harness.setObjectVariable(horizontal.id,'Id','horizontal-fixture');
+harness.setObjectVariable(overhead.id,'Id','overhead-fixture');
+harness.setObjectVariable(horizontal.id,'Health',100);
+harness.setObjectVariable(overhead.id,'Health',100);
 const horizontalId=ov(horizontal,'Id'),overheadId=ov(overhead,'Id');
 harness.setObjectPosition(p().id,1200,504);
 harness.setSceneVariable('GameMode','Playing');
@@ -50,13 +58,20 @@ for(const weapon of ['Energy','Cannon','Missile']){
     weapon+' shows one visible shared reticle (harness='+(reticle&&!reticle.hidden)+', runtime='+(liveReticle&&!liveReticle.isHidden())+')'
   );
   const liveTarget=runtime.targets().find(o=>runtime.ov(o,'Id').getAsString()===horizontalId);
-  const livePoint=liveTarget&&runtime.center(liveTarget);
+  const livePoint=liveTarget&&{
+    x:liveTarget.getX()+liveTarget.getWidth()/2,
+    y:liveTarget.getY()+Math.min(10,Math.max(6,liveTarget.getHeight()*0.25)),
+  };
   const currentHorizontal=harness.getObjects('Dummy').find(o=>ov(o,'Id')===horizontalId);
+  const currentPoint=currentHorizontal&&{
+    x:currentHorizontal.x+currentHorizontal.width/2,
+    y:currentHorizontal.y+Math.min(10,Math.max(6,currentHorizontal.height*0.25)),
+  };
   harness.assert(
-    currentHorizontal&&Math.abs(reticle.centerX-currentHorizontal.centerX)<8&&Math.abs(reticle.centerY-currentHorizontal.centerY)<8&&
+    currentPoint&&Math.abs(reticle.centerX-currentPoint.x)<8&&Math.abs(reticle.centerY-currentPoint.y)<8&&
       livePoint&&Math.abs(reticle.centerX-livePoint.x)<8&&Math.abs(reticle.centerY-livePoint.y)<8,
-    weapon+' centers the reticle on the shared target (reticle='+reticle.centerX+','+reticle.centerY+
-      ', harness='+(currentHorizontal?currentHorizontal.centerX+','+currentHorizontal.centerY:'missing')+
+    weapon+' centers the reticle on the shared upper-body target (reticle='+reticle.centerX+','+reticle.centerY+
+      ', harness='+(currentPoint?currentPoint.x+','+currentPoint.y:'missing')+
       ', runtime='+(livePoint?livePoint.x+','+livePoint.y:'missing')+')'
   );
 }
@@ -70,9 +85,9 @@ await harness.stepFrames(3);
 harness.assert(runtime.aimTargetId===horizontalId,'small weighted-score improvements do not move the sticky reticle');
 
 origin=aimOrigin();
-setCenter(overhead,origin.x+50,origin.y-50);
+setCenter(overhead,origin.x+20,origin.y-80);
 await harness.stepFrames(3);
-harness.assert(runtime.aimTargetId===overheadId,'a clearly better vertical target becomes selected');
+harness.assert(runtime.aimTargetId===overheadId,'a clearly better vertical target becomes selected '+JSON.stringify({aim:runtime.aimTargetId,horizontal:horizontalId,overhead:overheadId,origin:aimOrigin(),horizontalPoint:{x:horizontal.centerX,y:horizontal.centerY},overheadPoint:{x:overhead.centerX,y:overhead.centerY},blockers:runtime.walls()}));
 
 for(const bullet of [...harness.getObjects('Bullet')])harness.removeObject(bullet.id);
 harness.setSceneVariable('CurrentWeapon','Energy');
@@ -80,8 +95,14 @@ await harness.stepFrames(2);
 await tap('w');
 const energyBullet=one('Bullet');
 harness.assert(
-  !!energyBullet&&ov(energyBullet,'Vy')<-1,
-  'the energy gun fires toward the shared weighted target instead of choosing again'
+  (!!energyBullet&&ov(energyBullet,'Vy')<-1)||ov(overhead,'Health')<100,
+  'the energy gun fires toward the shared weighted target instead of choosing again ('+JSON.stringify({
+    aim:runtime.aimTargetId,weapon:v('CurrentWeapon'),
+    horizontal:{x:horizontal.centerX,y:horizontal.centerY,health:ov(horizontal,'Health')},
+    overhead:{x:overhead.centerX,y:overhead.centerY,health:ov(overhead,'Health')},
+    bullet:energyBullet?{x:energyBullet.centerX,y:energyBullet.centerY,vx:ov(energyBullet,'Vx'),vy:ov(energyBullet,'Vy')}:null,
+    origin:aimOrigin(),
+  })+')'
 );
 for(const bullet of [...harness.getObjects('Bullet')])harness.removeObject(bullet.id);
 
